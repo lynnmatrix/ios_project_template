@@ -1,0 +1,3 @@
+[submodule "thirdparty/three20"]
+	path = thirdparty/three20
+	url = git://github.com/facebook/three20.git
