@@ -3,16 +3,16 @@
 //  Papa
 //
 //  Created by Yiming Lin on 4/20/12.
-//  Copyright (c) 2012 Youdao. All rights reserved.
+//  Copyright (c) 2012 papa. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-#import "PPAppDelegate.h"
+#import "AppDelegate.h"
 
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([PPAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }

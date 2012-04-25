@@ -15,4 +15,5 @@ profile
 *.moved-aside
 
 *.orig
+.DS_Store
 *.pyc
