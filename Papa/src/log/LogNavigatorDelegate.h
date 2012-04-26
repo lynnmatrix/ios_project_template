@@ -7,22 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
-@protocol LogSource <NSObject>
-
-/**
- provides dictionary with pageview as key 
- and url of view controller as object
- */
-- (NSDictionary*) pageViewURLDict;
-
-@end
+#import "LogDataSource.h"
 
 @interface LogNavigatorDelegate : NSObject <TTNavigatorDelegate>
-{
-    TTURLMap* _logMap;
-    NSMutableArray* _logArray;
-}
 
 /**
 	Source for log,which provides dictionary with pageview as key 
@@ -38,23 +25,3 @@
 
 @end
 
-
-@interface LogPageView : NSObject{
-    NSString* _pageView;
-}
-@property (nonatomic, retain) NSString* pageView;
-
-/**
- initialize DSLogHelper with page view
- @param pageView page to view
- */
-- (id) initWithPageView:(NSString*)pageView;
-
-/**
- create initialize DSLogHelper with page view
- @param page view
- @returns instance of DSLoggerHelper
- */
-+ (LogPageView*) loggerHelperWithPageView: (NSString*) pageView;
-
-@end

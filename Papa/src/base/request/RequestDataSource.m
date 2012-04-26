@@ -12,7 +12,7 @@
 
 @synthesize server = _server;
 
-+ (RequestDataSource*) sharedRequestDataSource{
++ (RequestDataSource*) defaultRequestDataSource{
     static RequestDataSource* requestDataSource = nil;
     if (nil == requestDataSource) {
         requestDataSource = [[RequestDataSource alloc] init];

@@ -9,5 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface NavigatorConf : NSObject
-+ (void)prepareNavigator;
+/**
+	configure the urlmap of the default navigator
+ */
++ (void)configNavigator;
+
 @end

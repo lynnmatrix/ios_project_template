@@ -46,7 +46,7 @@
 }
 
 //reset pageView
-- (void)updatePageView:(Request *)request pageView:(NSString *)pageView
+- (void)updateLogRequest:(Request *)request pageView:(NSString *)pageView
 {
     NSArray* paramNames = [Request getParamArray:API_LOG];
     
@@ -65,7 +65,7 @@
 }
 
 //reset clickPos
-- (void)updateClickPos:(Request *)request clickPos:(int)clickPos
+- (void)updateLogRequest:(Request *)request clickPos:(int)clickPos
 {
     NSArray* paramNames = [Request getParamArray:API_LOG];
     NSString* clickPosName = [paramNames objectAtIndex:1];
@@ -86,21 +86,21 @@
 {
     TTDCONDITIONLOG(DebugFlagLog, @"add log with click positon %d",clickPos);
     
-    Request* LogRequest = nil;
+    Request* logRequest = nil;
     for (Request* request in _requestBatch.requestArray) {
         if (API_LOG==request.type) {
-            LogRequest =request;
+            logRequest =request;
             break;
         }
     }
     
-    if (LogRequest) {
-        TTDASSERT(API_LOG == LogRequest.type);
+    if (logRequest) {
+        TTDASSERT(API_LOG == logRequest.type);
         
-        [self updatePageView:LogRequest
+        [self updateLogRequest:logRequest
                     pageView:pageView];
         
-        [self updateClickPos:LogRequest
+        [self updateLogRequest:logRequest
                     clickPos:clickPos];
     }else {
         Request* request = [Request requestWithMethod:API_LOG
@@ -129,7 +129,7 @@
     if (LogRequest) {
         TTDASSERT(API_LOG == LogRequest.type);
         
-        [self updatePageView:LogRequest
+        [self updateLogRequest:LogRequest
                     pageView:pageView];
     }else {
         

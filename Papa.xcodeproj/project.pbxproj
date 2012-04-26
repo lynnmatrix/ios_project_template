@@ -12,8 +12,11 @@
 		044E509A1548460700A1949F /* LogConf.m in Sources */ = {isa = PBXBuildFile; fileRef = 044E50961548460700A1949F /* LogConf.m */; };
 		044E509B1548460700A1949F /* RequestConf.m in Sources */ = {isa = PBXBuildFile; fileRef = 044E50981548460700A1949F /* RequestConf.m */; };
 		044E509C1548460700A1949F /* RequestConf.m in Sources */ = {isa = PBXBuildFile; fileRef = 044E50981548460700A1949F /* RequestConf.m */; };
+		044E509F1548495700A1949F /* RequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 044E509E1548495700A1949F /* RequestTests.m */; };
 		045CCC9515459F3D002CB161 /* extThree20CSSStyle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 045CCC9415459F3D002CB161 /* extThree20CSSStyle.bundle */; };
 		045CCC9615459F3D002CB161 /* extThree20CSSStyle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 045CCC9415459F3D002CB161 /* extThree20CSSStyle.bundle */; };
+		047CBCF51549922400F11B38 /* LogDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 047CBCF41549922400F11B38 /* LogDataSource.m */; };
+		047CBCF61549922400F11B38 /* LogDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 047CBCF41549922400F11B38 /* LogDataSource.m */; };
 		04B2DE86154267D5002A85D7 /* PPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2DE85154267D5002A85D7 /* PPTabBarController.m */; };
 		04B2DE87154267D5002A85D7 /* PPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2DE85154267D5002A85D7 /* PPTabBarController.m */; };
 		04B2DE8A15426823002A85D7 /* PPPartyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2DE8915426823002A85D7 /* PPPartyController.m */; };
@@ -324,11 +327,16 @@
 
 /* Begin PBXFileReference section */
 		044E509215483FD800A1949F /* Papa-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Papa-Info.plist"; sourceTree = "<group>"; };
-		044E50951548460700A1949F /* LogConf.h */ = {isa = PBXFileReference; fileEncoding = 4; path = LogConf.h; sourceTree = "<group>"; };
+		044E50951548460700A1949F /* LogConf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogConf.h; sourceTree = "<group>"; };
 		044E50961548460700A1949F /* LogConf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogConf.m; sourceTree = "<group>"; };
 		044E50971548460700A1949F /* RequestConf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestConf.h; sourceTree = "<group>"; };
 		044E50981548460700A1949F /* RequestConf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestConf.m; sourceTree = "<group>"; };
+		044E509D1548495700A1949F /* RequestTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestTests.h; sourceTree = "<group>"; };
+		044E509E1548495700A1949F /* RequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestTests.m; sourceTree = "<group>"; };
 		045CCC9415459F3D002CB161 /* extThree20CSSStyle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = extThree20CSSStyle.bundle; sourceTree = "<group>"; };
+		047CBCF31549922400F11B38 /* LogDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogDataSource.h; sourceTree = "<group>"; };
+		047CBCF41549922400F11B38 /* LogDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogDataSource.m; sourceTree = "<group>"; };
+		047CBCF7154997A400F11B38 /* UrlPageViewDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlPageViewDefinition.h; sourceTree = "<group>"; };
 		04B2DE84154267D5002A85D7 /* PPTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPTabBarController.h; sourceTree = "<group>"; };
 		04B2DE85154267D5002A85D7 /* PPTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTabBarController.m; sourceTree = "<group>"; };
 		04B2DE8815426823002A85D7 /* PPPartyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPartyController.h; sourceTree = "<group>"; };
@@ -466,6 +474,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		047CBCF21549921300F11B38 /* log */ = {
+			isa = PBXGroup;
+			children = (
+				047CBCF31549922400F11B38 /* LogDataSource.h */,
+				047CBCF41549922400F11B38 /* LogDataSource.m */,
+			);
+			path = log;
+			sourceTree = "<group>";
+		};
 		04D4C23B1547026E000D1DCA /* log */ = {
 			isa = PBXGroup;
 			children = (
@@ -527,6 +544,8 @@
 				14BC352E1541643800BE4FA1 /* PapaTests.h */,
 				14BC352F1541643800BE4FA1 /* PapaTests.m */,
 				14BC35291541643700BE4FA1 /* Supporting Files */,
+				044E509D1548495700A1949F /* RequestTests.h */,
+				044E509E1548495700A1949F /* RequestTests.m */,
 			);
 			path = PapaTests;
 			sourceTree = "<group>";
@@ -577,6 +596,7 @@
 		14BC3582154170F000BE4FA1 /* base */ = {
 			isa = PBXGroup;
 			children = (
+				047CBCF21549921300F11B38 /* log */,
 				14BC3583154170F000BE4FA1 /* model */,
 				14BC3588154170F000BE4FA1 /* request */,
 				04B2F5B81542E0F1002A85D7 /* ExceptionType.h */,
@@ -621,14 +641,15 @@
 				04B2DEBC15426C0B002A85D7 /* Config.h */,
 				04B2DEBD15426C0B002A85D7 /* Config.m */,
 				04B2DEBE15426C0B002A85D7 /* DebugFlags.h */,
+				044E50951548460700A1949F /* LogConf.h */,
+				044E50961548460700A1949F /* LogConf.m */,
 				04B2DEBF15426C0B002A85D7 /* NavigatorConf.h */,
 				04B2DEC015426C0B002A85D7 /* NavigatorConf.m */,
 				04B2DEC115426C0B002A85D7 /* NotificationFlag.h */,
 				04B2DEC215426C0B002A85D7 /* NotificationFlag.m */,
-				044E50951548460700A1949F /* LogConf.h */,
-				044E50961548460700A1949F /* LogConf.m */,
 				044E50971548460700A1949F /* RequestConf.h */,
 				044E50981548460700A1949F /* RequestConf.m */,
+				047CBCF7154997A400F11B38 /* UrlPageViewDefinition.h */,
 			);
 			path = config;
 			sourceTree = "<group>";
@@ -1224,6 +1245,7 @@
 				04D4C246154702E7000D1DCA /* LogNavigatorDelegate.m in Sources */,
 				044E50991548460700A1949F /* LogConf.m in Sources */,
 				044E509B1548460700A1949F /* RequestConf.m in Sources */,
+				047CBCF51549922400F11B38 /* LogDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1269,6 +1291,8 @@
 				04D4C247154702E7000D1DCA /* LogNavigatorDelegate.m in Sources */,
 				044E509A1548460700A1949F /* LogConf.m in Sources */,
 				044E509C1548460700A1949F /* RequestConf.m in Sources */,
+				044E509F1548495700A1949F /* RequestTests.m in Sources */,
+				047CBCF61549922400F11B38 /* LogDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

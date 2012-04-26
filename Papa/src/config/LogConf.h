@@ -8,8 +8,12 @@
 
 #import "LogNavigatorDelegate.h"
 
-#define URL_Main                @"pp://main"
-#define PageView_Main           @"pageview_main"
-@interface LogConf : NSObject <LogSource>
+@class LogSource;
+
+@interface LogConf : NSObject
+/**
+	configure the map from url to pageview,which is used for log
+ */
++ (void) confLogSource;
 
 @end

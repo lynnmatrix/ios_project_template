@@ -9,8 +9,8 @@
 #import "AppDelegate.h"
 
 #import "NavigatorConf.h"
+#import "LogConf.h"
 #import "RequestConf.h"
-#import "LogNavigatorDelegate.h"
 
 #import "User.h"
 
@@ -229,8 +229,9 @@ const int NavigationBackgroundTag = 15769457;
      */
     [self prepareCSSStyle];
 
-    [NavigatorConf prepareNavigator];
-    [RequestConf prepareRequestSignatureMap];
+    [NavigatorConf configNavigator];
+    [LogConf confLogSource];
+    [RequestConf configRequestSignatureMap];
     
     [TTURLRequestQueue mainQueue].defaultTimeout = DefaultRequestTimeOut;
     [self restoreCookie];

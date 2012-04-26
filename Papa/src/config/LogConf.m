@@ -7,20 +7,30 @@
 //
 
 #import "LogConf.h"
-
-static  NSMutableDictionary* pvURLDict=nil;
+#import "LogDataSource.h"
+#import "UrlPageViewDefinition.h"
 
 @implementation LogConf
-#pragma mark - 
-#pragma mark LogSource
-- (NSDictionary*) pageViewURLDict
-{
-    if (nil == pvURLDict) {
-        pvURLDict = [[NSMutableDictionary alloc] initWithObjectsAndKeys:
-                     URL_Main,PageView_Main,
-                     nil];
-    }
-    return pvURLDict;
+
++ (void) prepareLogSource:(LogSource*) logSource{
+    
+    [logSource mapURL:URL_Main toPageView:PageView_Main];
 }
 
++ (LogNavigatorDelegate*) getNavigatorDelegate{
+    static LogNavigatorDelegate* delegate;
+    if (nil==delegate) {
+        delegate = [[LogNavigatorDelegate alloc] init];
+        delegate.logSource = [[LogSource alloc] init];
+        [self prepareLogSource:delegate.logSource];
+    }
+    return delegate;
+}
+
+#pragma mark - 
+#pragma mark public
++ (void) confLogSource{
+    TTNavigator* navigator = [TTNavigator navigator];
+    navigator.delegate = [self getNavigatorDelegate];
+}
 @end

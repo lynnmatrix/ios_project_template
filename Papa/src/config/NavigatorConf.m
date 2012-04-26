@@ -7,8 +7,7 @@
 //
 
 #import "NavigatorConf.h"
-#import "LogNavigatorDelegate.h"
-#import "LogConf.h"
+#import "UrlPageViewDefinition.h"
 #import "Config.h"
 
 #import "PPTabBarController.h"
@@ -17,24 +16,9 @@
 ///////////////////////////////////
 
 @implementation NavigatorConf
+
 #pragma -
 #pragma  navigator map
-// navigator map without parameter
-+ (void)prepareGeneralMap:(TTURLMap *)map 
-{
-    [map from:[urlPrefix stringByAppendingString:@"nib/(loadFromNib:)"] 
-toSharedViewController:self];
-    
-    [map from:[urlPrefix stringByAppendingString:@"nib/(loadFromNib:)/(withClass:)"]
-toSharedViewController:self];
-    
-    [map from:[urlPrefix stringByAppendingString:@"viewController/(loadFromVC:)"] 
-toSharedViewController:self];
-    
-    [map from:[urlPrefix stringByAppendingString:@"modal/(loadFromNib:)" ]
-toModalViewController:self];
-}
-
 // navigator map
 + (void)prepareNavigatorMap:(TTURLMap *)map 
 {
@@ -51,22 +35,27 @@ toModalViewController:self];
         toViewController:[PPFriendController class]];
 }
 
-+ (LogNavigatorDelegate*) getNavigatorDelegate{
-    static LogNavigatorDelegate* delegate;
-    if (nil==delegate) {
-        delegate = [[LogNavigatorDelegate alloc] init];
-        delegate.logSource = [[LogConf alloc] init];
-    }
-    return delegate;
+// navigator map without parameter
++ (void)prepareGeneralMap:(TTURLMap *)map 
+{
+    [map from:[urlPrefix stringByAppendingString:@"nib/(loadFromNib:)"] 
+toSharedViewController:self];
+    
+    [map from:[urlPrefix stringByAppendingString:@"nib/(loadFromNib:)/(withClass:)"]
+toSharedViewController:self];
+    
+    [map from:[urlPrefix stringByAppendingString:@"viewController/(loadFromVC:)"] 
+toSharedViewController:self];
+    
+    [map from:[urlPrefix stringByAppendingString:@"modal/(loadFromNib:)" ]
+toModalViewController:self];
 }
 
-+ (void)prepareNavigator
++ (void)configNavigator
 {
     TTNavigator* navigator = [TTNavigator navigator];
     
     navigator.persistenceMode = TTNavigatorPersistenceModeNone;
-    
-    navigator.delegate = [self getNavigatorDelegate];
     
     // URLMap
     TTURLMap* map = [navigator URLMap];

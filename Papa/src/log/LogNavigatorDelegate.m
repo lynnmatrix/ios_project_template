@@ -11,7 +11,6 @@
 #import "Logger.h"
 
 @interface LogNavigatorDelegate () 
-- (void) configLogMap;
 - (void) addLogForURL: (NSString*)URL;
 - (BOOL) hasClickPosInURL:(NSString*) URL;
 - (int)  clickPosInURL:(NSString*) URL;
@@ -20,16 +19,6 @@
 @implementation LogNavigatorDelegate
 @synthesize logSource = _logSource;
 
-- (id) init
-{
-    if (self = [super init]) {
-        
-        _logMap = [[TTURLMap alloc] init];
-        _logArray = [[NSMutableArray alloc] init];
-        [self configLogMap];
-    }
-    return self;
-}
 #pragma mark -
 #pragma mark TTNavigatorDelegate
 - (BOOL)navigator:(TTNavigator*)navigator shouldOpenURL:(NSURL*)URL {
@@ -50,11 +39,10 @@
     if (fragmentRange.location != NSNotFound) {
         baseURL =[URL substringToIndex:fragmentRange.location];
     }
-    id object = [_logMap objectForURL:baseURL];
-    if (object) {
-        NSString* pageView = (NSString*) object;
-        if ([pageView caseInsensitiveCompare:@"restaurantOverview"]==NSOrderedSame
-            &&[self hasClickPosInURL:URL]) {
+    
+    NSString* pageView = [_logSource pageViewForURL:URL];
+    if (pageView) {
+        if ([self hasClickPosInURL:URL]) {
             int clickPos = [self clickPosInURL:URL];
             [[Logger defaultLogger] addLogWithPageView:pageView
                                               clickPos:clickPos];
@@ -64,28 +52,6 @@
     }
 }
 
-// navigator map
-- (void)configLogMap
-{
-    if (nil==self.logSource) {
-        return;
-    }
-    NSDictionary* pageViewURLDict = [self.logSource pageViewURLDict];
-    
-    NSEnumerator* keyEnumerator = [pageViewURLDict keyEnumerator];
-    NSString* pageView =nil;
-    
-    while (pageView=[keyEnumerator nextObject]) 
-    {
-        NSString* url = [pageViewURLDict objectForKey:pageView];
-        LogPageView* logHelper = [[LogPageView alloc] initWithPageView:pageView];
-        [_logArray addObject:logHelper];
-        
-        [_logMap from:url 
-             toObject:logHelper
-             selector:@selector(pageView)];
-    } 
-}
 
 - (BOOL) hasClickPosInURL:(NSString*) URL
 {
@@ -110,25 +76,5 @@
         }
     }
     return -1;
-}
-@end
-
-
-
-@implementation LogPageView
-@synthesize pageView = _pageView;
-
-- (id) initWithPageView:(NSString*)pageView
-{
-    if (self = [super init]) {
-        self.pageView = pageView;
-    }
-    return self;
-}
-
-+ (LogPageView*) loggerHelperWithPageView: (NSString*) pageView
-{
-    LogPageView* result = [[LogPageView alloc] initWithPageView:pageView];
-    return result;
 }
 @end

@@ -6,7 +6,6 @@
 //  Copyright (c) 2011 papa. All rights reserved.
 //
 
-#import "Request.h"
 
 /**
 	Method types of network api
@@ -64,5 +63,5 @@ typedef enum API_STATUS_CODE{
 
 
 @interface RequestConf: NSObject
-+ (void) prepareRequestSignatureMap;
++ (void) configRequestSignatureMap;
 @end
