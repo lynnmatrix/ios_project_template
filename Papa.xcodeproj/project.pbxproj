@@ -17,6 +17,7 @@
 		045CCC9615459F3D002CB161 /* extThree20CSSStyle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 045CCC9415459F3D002CB161 /* extThree20CSSStyle.bundle */; };
 		047B56EE154AE5FF0095D11A /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B2DF9D15429506002A85D7 /* CrashReporter.framework */; };
 		047B56EF154AE6890095D11A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14BC34FA1541643700BE4FA1 /* CoreGraphics.framework */; };
+		047B56F2154AF2310095D11A /* RequestBatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 047B56F1154AF2310095D11A /* RequestBatchTests.m */; };
 		047CBCF51549922400F11B38 /* LogDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 047CBCF41549922400F11B38 /* LogDataSource.m */; };
 		047CBCF61549922400F11B38 /* LogDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 047CBCF41549922400F11B38 /* LogDataSource.m */; };
 		04B2DE86154267D5002A85D7 /* PPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2DE85154267D5002A85D7 /* PPTabBarController.m */; };
@@ -336,6 +337,8 @@
 		044E509D1548495700A1949F /* RequestTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestTests.h; sourceTree = "<group>"; };
 		044E509E1548495700A1949F /* RequestTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestTests.m; sourceTree = "<group>"; };
 		045CCC9415459F3D002CB161 /* extThree20CSSStyle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = extThree20CSSStyle.bundle; sourceTree = "<group>"; };
+		047B56F0154AF2310095D11A /* RequestBatchTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestBatchTests.h; sourceTree = "<group>"; };
+		047B56F1154AF2310095D11A /* RequestBatchTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestBatchTests.m; sourceTree = "<group>"; };
 		047CBCF31549922400F11B38 /* LogDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogDataSource.h; sourceTree = "<group>"; };
 		047CBCF41549922400F11B38 /* LogDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogDataSource.m; sourceTree = "<group>"; };
 		047CBCF7154997A400F11B38 /* UrlPageViewDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlPageViewDefinition.h; sourceTree = "<group>"; };
@@ -550,6 +553,8 @@
 				14BC35291541643700BE4FA1 /* Supporting Files */,
 				044E509D1548495700A1949F /* RequestTests.h */,
 				044E509E1548495700A1949F /* RequestTests.m */,
+				047B56F0154AF2310095D11A /* RequestBatchTests.h */,
+				047B56F1154AF2310095D11A /* RequestBatchTests.m */,
 			);
 			path = PapaTests;
 			sourceTree = "<group>";
@@ -1297,6 +1302,7 @@
 				044E509C1548460700A1949F /* RequestConf.m in Sources */,
 				044E509F1548495700A1949F /* RequestTests.m in Sources */,
 				047CBCF61549922400F11B38 /* LogDataSource.m in Sources */,
+				047B56F2154AF2310095D11A /* RequestBatchTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
