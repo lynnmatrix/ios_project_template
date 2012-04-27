@@ -16,7 +16,6 @@ static RequestDataSource* gRequestDataSource = nil;
 @synthesize server = _server;
 
 + (RequestDataSource*) globalRequestDataSource{
-    static RequestDataSource* gRequestDataSource = nil;
     if (nil == gRequestDataSource) {
         gRequestDataSource = [[RequestDataSource alloc] init];
     }

@@ -15,6 +15,8 @@
 		044E509F1548495700A1949F /* RequestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 044E509E1548495700A1949F /* RequestTests.m */; };
 		045CCC9515459F3D002CB161 /* extThree20CSSStyle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 045CCC9415459F3D002CB161 /* extThree20CSSStyle.bundle */; };
 		045CCC9615459F3D002CB161 /* extThree20CSSStyle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 045CCC9415459F3D002CB161 /* extThree20CSSStyle.bundle */; };
+		047B56EE154AE5FF0095D11A /* CrashReporter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04B2DF9D15429506002A85D7 /* CrashReporter.framework */; };
+		047B56EF154AE6890095D11A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14BC34FA1541643700BE4FA1 /* CoreGraphics.framework */; };
 		047CBCF51549922400F11B38 /* LogDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 047CBCF41549922400F11B38 /* LogDataSource.m */; };
 		047CBCF61549922400F11B38 /* LogDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 047CBCF41549922400F11B38 /* LogDataSource.m */; };
 		04B2DE86154267D5002A85D7 /* PPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2DE85154267D5002A85D7 /* PPTabBarController.m */; };
@@ -36,7 +38,7 @@
 		04B2DEB815426BF1002A85D7 /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2DEB515426BF1002A85D7 /* Request.m */; };
 		04B2DEB915426BF1002A85D7 /* Request.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2DEB515426BF1002A85D7 /* Request.m */; };
 		04B2DEBA15426BF1002A85D7 /* RequestBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2DEB715426BF1002A85D7 /* RequestBatch.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		04B2DEBB15426BF1002A85D7 /* RequestBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2DEB715426BF1002A85D7 /* RequestBatch.m */; };
+		04B2DEBB15426BF1002A85D7 /* RequestBatch.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2DEB715426BF1002A85D7 /* RequestBatch.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		04B2DEC315426C0B002A85D7 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2DEBD15426C0B002A85D7 /* Config.m */; };
 		04B2DEC415426C0B002A85D7 /* Config.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2DEBD15426C0B002A85D7 /* Config.m */; };
 		04B2DEC515426C0B002A85D7 /* NavigatorConf.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2DEC015426C0B002A85D7 /* NavigatorConf.m */; };
@@ -468,6 +470,8 @@
 				14BC35231541643700BE4FA1 /* SenTestingKit.framework in Frameworks */,
 				14BC35241541643700BE4FA1 /* UIKit.framework in Frameworks */,
 				14BC35251541643700BE4FA1 /* Foundation.framework in Frameworks */,
+				047B56EE154AE5FF0095D11A /* CrashReporter.framework in Frameworks */,
+				047B56EF154AE6890095D11A /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1474,6 +1478,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)/thirdparty\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Papa/Papa-Prefix.pch";
@@ -1498,6 +1503,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"\"$(SRCROOT)/thirdparty\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Papa/Papa-Prefix.pch";

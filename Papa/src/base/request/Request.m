@@ -104,6 +104,10 @@
     return nil;
 }
 
+- (NSString*) description{
+    return [NSString stringWithFormat:@"request %@ with params:\n%@",self.method,self.params];
+}
+
 @end
 
 @implementation EmptyParamValue
