@@ -16,7 +16,7 @@
 
 @implementation RequestConf
 + (void) configRequestSignatureMap{
-    RequestDataSource* requestSource = [RequestDataSource defaultRequestDataSource];
+    RequestDataSource* requestSource = [RequestDataSource globalRequestDataSource];
     requestSource.server = server;
     [requestSource mapApi:API_LOG toName:@"log"];
     [requestSource mapApi:API_LOG toParams:@"pageView,clickPos,crashReport"]; 

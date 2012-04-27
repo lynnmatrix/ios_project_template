@@ -30,7 +30,7 @@
     Request * result = [[Request alloc] init];
     
     result.type = method;
-    result.method = [[RequestDataSource defaultRequestDataSource] getName:method];
+    result.method = [[RequestDataSource globalRequestDataSource] getName:method];
 
     NSArray * paramArray = [Request getParamArray:method];
     
@@ -53,7 +53,7 @@
 {
     Request * result = [[Request alloc] init];
     result.type = method;
-    result.method = [[RequestDataSource defaultRequestDataSource] getName:method];
+    result.method = [[RequestDataSource globalRequestDataSource] getName:method];
     
     NSArray* paramArray =[Request getParamArray:method];
     
@@ -79,7 +79,7 @@
 
 + (NSArray*) getParamArray:(int) method
 {
-    NSString* paramStr= [[RequestDataSource defaultRequestDataSource] getParams:method];
+    NSString* paramStr= [[RequestDataSource globalRequestDataSource] getParams:method];
     NSArray* paramArray = [paramStr componentsSeparatedByString:@","];
     return paramArray;
 }

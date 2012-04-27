@@ -25,7 +25,7 @@
     NSMutableArray* _pageViewArray;
 }
 
-+ (LogSource*) defaultLogSource;
++ (LogSource*) globalLogSource;
 - (void) mapURL:(NSString*) url toPageView:(NSString*) pageView;
 - (void) removeMapForURL:(NSString*) url;
 @end

@@ -60,7 +60,7 @@
     methods = [methods urlEncoded];
     
     NSString * url = [[[NSString alloc] initWithFormat : @"%@api?m=%@", 
-                       [[RequestDataSource defaultRequestDataSource] server],
+                       [[RequestDataSource globalRequestDataSource] server],
                        methods] autorelease];
     
     return url;
@@ -76,7 +76,7 @@
    
         NSMutableDictionary* status = [[NSMutableDictionary alloc] initWithCapacity:2];
         
-        NSString* requestName = [[RequestDataSource defaultRequestDataSource] getName:request.type];
+        NSString* requestName = [[RequestDataSource globalRequestDataSource] getName:request.type];
         NSArray* singleResponse = [response.rootObject objectForKey:requestName];
         
         if (nil == singleResponse) {

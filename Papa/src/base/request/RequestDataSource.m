@@ -8,16 +8,19 @@
 
 #import "RequestDataSource.h"
 
+//global requestdatasource
+static RequestDataSource* gRequestDataSource = nil;
+
 @implementation RequestDataSource
 
 @synthesize server = _server;
 
-+ (RequestDataSource*) defaultRequestDataSource{
-    static RequestDataSource* requestDataSource = nil;
-    if (nil == requestDataSource) {
-        requestDataSource = [[RequestDataSource alloc] init];
++ (RequestDataSource*) globalRequestDataSource{
+    static RequestDataSource* gRequestDataSource = nil;
+    if (nil == gRequestDataSource) {
+        gRequestDataSource = [[RequestDataSource alloc] init];
     }
-    return requestDataSource;
+    return gRequestDataSource;
 }
 
 - (id) init{

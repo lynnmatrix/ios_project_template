@@ -46,6 +46,7 @@
 }
 @end
 
+static LogSource* logSource = nil;
 
 @implementation LogSource
 
@@ -57,12 +58,17 @@
     return self;
 }
 
-+ (LogSource*) defaultLogSource{
-    static LogSource* logSource = nil;
++ (LogSource*) globalLogSource{
     if (nil == logSource) {
         logSource = [[LogSource alloc] init];
     }
     return logSource;
+//    __block LogSource* logSource = nil;
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        logSource = [[LogSource alloc] init];
+//    });
+//    return logSource;
 }
 
 - (void) mapURL:(NSString*) url toPageView:(NSString*) pageView{

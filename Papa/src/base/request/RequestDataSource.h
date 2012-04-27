@@ -36,7 +36,7 @@
 }
 @property (nonatomic, copy) NSString* server;
 
-+ (RequestDataSource*) defaultRequestDataSource;
++ (RequestDataSource*) globalRequestDataSource;
 - (void) mapApi:(int) api toName:(NSString*)methodName;
 - (void) mapApi:(int)api toParams:(NSString*) params;
 - (void) removeNameOfApi:(int) api;
