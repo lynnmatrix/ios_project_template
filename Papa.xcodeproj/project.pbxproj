@@ -26,6 +26,8 @@
 		047E3FE9154D7671005FDDF8 /* PPSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047E3FE7154D7671005FDDF8 /* PPSquareViewController.m */; };
 		047E3FEC154D7DC1005FDDF8 /* PPLeftSidebarTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 047E3FEB154D7DC1005FDDF8 /* PPLeftSidebarTableViewDelegate.m */; };
 		047E3FED154D7DC2005FDDF8 /* PPLeftSidebarTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 047E3FEB154D7DC1005FDDF8 /* PPLeftSidebarTableViewDelegate.m */; };
+		047E3FF0154D885E005FDDF8 /* LogConfTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 047E3FEF154D885E005FDDF8 /* LogConfTests.m */; };
+		047E3FF3154D89DF005FDDF8 /* NavigatorConfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 047E3FF2154D89DF005FDDF8 /* NavigatorConfTest.m */; };
 		047F0967154C3F9A002B9DB3 /* UINavigationItem+JTRevealSidebarV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 047F0964154C3F9A002B9DB3 /* UINavigationItem+JTRevealSidebarV2.m */; };
 		047F0968154C3F9A002B9DB3 /* UINavigationItem+JTRevealSidebarV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 047F0964154C3F9A002B9DB3 /* UINavigationItem+JTRevealSidebarV2.m */; };
 		047F0969154C3F9A002B9DB3 /* UIViewController+JTRevealSidebarV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 047F0966154C3F9A002B9DB3 /* UIViewController+JTRevealSidebarV2.m */; };
@@ -356,8 +358,12 @@
 		047E3FE3154D6F05005FDDF8 /* PPLeftSidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPLeftSidebarViewController.m; sourceTree = "<group>"; };
 		047E3FE6154D7671005FDDF8 /* PPSquareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPSquareViewController.h; sourceTree = "<group>"; };
 		047E3FE7154D7671005FDDF8 /* PPSquareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSquareViewController.m; sourceTree = "<group>"; };
-		047E3FEA154D7DC1005FDDF8 /* PPLeftSidebarTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; path = PPLeftSidebarTableViewDelegate.h; sourceTree = "<group>"; };
+		047E3FEA154D7DC1005FDDF8 /* PPLeftSidebarTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPLeftSidebarTableViewDelegate.h; sourceTree = "<group>"; };
 		047E3FEB154D7DC1005FDDF8 /* PPLeftSidebarTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPLeftSidebarTableViewDelegate.m; sourceTree = "<group>"; };
+		047E3FEE154D885E005FDDF8 /* LogConfTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogConfTests.h; sourceTree = "<group>"; };
+		047E3FEF154D885E005FDDF8 /* LogConfTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogConfTests.m; sourceTree = "<group>"; };
+		047E3FF1154D89DF005FDDF8 /* NavigatorConfTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigatorConfTest.h; sourceTree = "<group>"; };
+		047E3FF2154D89DF005FDDF8 /* NavigatorConfTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigatorConfTest.m; sourceTree = "<group>"; };
 		047F0962154C3F9A002B9DB3 /* JTRevealSidebarV2Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTRevealSidebarV2Delegate.h; sourceTree = "<group>"; };
 		047F0963154C3F9A002B9DB3 /* UINavigationItem+JTRevealSidebarV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+JTRevealSidebarV2.h"; sourceTree = "<group>"; };
 		047F0964154C3F9A002B9DB3 /* UINavigationItem+JTRevealSidebarV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+JTRevealSidebarV2.m"; sourceTree = "<group>"; };
@@ -588,6 +594,10 @@
 				044E509E1548495700A1949F /* RequestTests.m */,
 				047B56F0154AF2310095D11A /* RequestBatchTests.h */,
 				047B56F1154AF2310095D11A /* RequestBatchTests.m */,
+				047E3FEE154D885E005FDDF8 /* LogConfTests.h */,
+				047E3FEF154D885E005FDDF8 /* LogConfTests.m */,
+				047E3FF1154D89DF005FDDF8 /* NavigatorConfTest.h */,
+				047E3FF2154D89DF005FDDF8 /* NavigatorConfTest.m */,
 			);
 			path = PapaTests;
 			sourceTree = "<group>";
@@ -1353,6 +1363,8 @@
 				047E3FE5154D6F06005FDDF8 /* PPLeftSidebarViewController.m in Sources */,
 				047E3FE9154D7671005FDDF8 /* PPSquareViewController.m in Sources */,
 				047E3FED154D7DC2005FDDF8 /* PPLeftSidebarTableViewDelegate.m in Sources */,
+				047E3FF0154D885E005FDDF8 /* LogConfTests.m in Sources */,
+				047E3FF3154D89DF005FDDF8 /* NavigatorConfTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
