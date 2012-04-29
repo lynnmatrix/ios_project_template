@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PPPartyController : UITableViewController
+@interface PPPartyController : TTModelViewController
 
 @end

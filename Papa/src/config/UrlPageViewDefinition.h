@@ -6,5 +6,8 @@
 //  Copyright (c) 2012年 Youdao. All rights reserved.
 //
 
-#define URL_Main                @"pp://main"
-#define PageView_Main           @"pageview_main"
+#define URL_Square              @"pp://square"
+#define PageView_Square         @"pageview_square"
+
+#define URL_Friends             @"pp://friends"
+#define URL_Parties             @"pp://parties"

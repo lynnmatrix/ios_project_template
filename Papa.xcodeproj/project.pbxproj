@@ -20,8 +20,18 @@
 		047B56F2154AF2310095D11A /* RequestBatchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 047B56F1154AF2310095D11A /* RequestBatchTests.m */; };
 		047CBCF51549922400F11B38 /* LogDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 047CBCF41549922400F11B38 /* LogDataSource.m */; };
 		047CBCF61549922400F11B38 /* LogDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 047CBCF41549922400F11B38 /* LogDataSource.m */; };
-		04B2DE86154267D5002A85D7 /* PPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2DE85154267D5002A85D7 /* PPTabBarController.m */; };
-		04B2DE87154267D5002A85D7 /* PPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2DE85154267D5002A85D7 /* PPTabBarController.m */; };
+		047E3FE4154D6F06005FDDF8 /* PPLeftSidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047E3FE3154D6F05005FDDF8 /* PPLeftSidebarViewController.m */; };
+		047E3FE5154D6F06005FDDF8 /* PPLeftSidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047E3FE3154D6F05005FDDF8 /* PPLeftSidebarViewController.m */; };
+		047E3FE8154D7671005FDDF8 /* PPSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047E3FE7154D7671005FDDF8 /* PPSquareViewController.m */; };
+		047E3FE9154D7671005FDDF8 /* PPSquareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 047E3FE7154D7671005FDDF8 /* PPSquareViewController.m */; };
+		047E3FEC154D7DC1005FDDF8 /* PPLeftSidebarTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 047E3FEB154D7DC1005FDDF8 /* PPLeftSidebarTableViewDelegate.m */; };
+		047E3FED154D7DC2005FDDF8 /* PPLeftSidebarTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 047E3FEB154D7DC1005FDDF8 /* PPLeftSidebarTableViewDelegate.m */; };
+		047F0967154C3F9A002B9DB3 /* UINavigationItem+JTRevealSidebarV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 047F0964154C3F9A002B9DB3 /* UINavigationItem+JTRevealSidebarV2.m */; };
+		047F0968154C3F9A002B9DB3 /* UINavigationItem+JTRevealSidebarV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 047F0964154C3F9A002B9DB3 /* UINavigationItem+JTRevealSidebarV2.m */; };
+		047F0969154C3F9A002B9DB3 /* UIViewController+JTRevealSidebarV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 047F0966154C3F9A002B9DB3 /* UIViewController+JTRevealSidebarV2.m */; };
+		047F096A154C3F9A002B9DB3 /* UIViewController+JTRevealSidebarV2.m in Sources */ = {isa = PBXBuildFile; fileRef = 047F0966154C3F9A002B9DB3 /* UIViewController+JTRevealSidebarV2.m */; };
+		047F0A1C154C4737002B9DB3 /* PPSidebarDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 047F0A1B154C4737002B9DB3 /* PPSidebarDelegate.m */; };
+		047F0A1D154C4737002B9DB3 /* PPSidebarDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 047F0A1B154C4737002B9DB3 /* PPSidebarDelegate.m */; };
 		04B2DE8A15426823002A85D7 /* PPPartyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2DE8915426823002A85D7 /* PPPartyController.m */; };
 		04B2DE8B15426823002A85D7 /* PPPartyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2DE8915426823002A85D7 /* PPPartyController.m */; };
 		04B2DE8E15426856002A85D7 /* PPFriendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04B2DE8D15426856002A85D7 /* PPFriendController.m */; };
@@ -342,8 +352,19 @@
 		047CBCF31549922400F11B38 /* LogDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogDataSource.h; sourceTree = "<group>"; };
 		047CBCF41549922400F11B38 /* LogDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogDataSource.m; sourceTree = "<group>"; };
 		047CBCF7154997A400F11B38 /* UrlPageViewDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlPageViewDefinition.h; sourceTree = "<group>"; };
-		04B2DE84154267D5002A85D7 /* PPTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPTabBarController.h; sourceTree = "<group>"; };
-		04B2DE85154267D5002A85D7 /* PPTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPTabBarController.m; sourceTree = "<group>"; };
+		047E3FE2154D6F05005FDDF8 /* PPLeftSidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPLeftSidebarViewController.h; sourceTree = "<group>"; };
+		047E3FE3154D6F05005FDDF8 /* PPLeftSidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPLeftSidebarViewController.m; sourceTree = "<group>"; };
+		047E3FE6154D7671005FDDF8 /* PPSquareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPSquareViewController.h; sourceTree = "<group>"; };
+		047E3FE7154D7671005FDDF8 /* PPSquareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSquareViewController.m; sourceTree = "<group>"; };
+		047E3FEA154D7DC1005FDDF8 /* PPLeftSidebarTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; path = PPLeftSidebarTableViewDelegate.h; sourceTree = "<group>"; };
+		047E3FEB154D7DC1005FDDF8 /* PPLeftSidebarTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPLeftSidebarTableViewDelegate.m; sourceTree = "<group>"; };
+		047F0962154C3F9A002B9DB3 /* JTRevealSidebarV2Delegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTRevealSidebarV2Delegate.h; sourceTree = "<group>"; };
+		047F0963154C3F9A002B9DB3 /* UINavigationItem+JTRevealSidebarV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+JTRevealSidebarV2.h"; sourceTree = "<group>"; };
+		047F0964154C3F9A002B9DB3 /* UINavigationItem+JTRevealSidebarV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationItem+JTRevealSidebarV2.m"; sourceTree = "<group>"; };
+		047F0965154C3F9A002B9DB3 /* UIViewController+JTRevealSidebarV2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JTRevealSidebarV2.h"; sourceTree = "<group>"; };
+		047F0966154C3F9A002B9DB3 /* UIViewController+JTRevealSidebarV2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+JTRevealSidebarV2.m"; sourceTree = "<group>"; };
+		047F0A1A154C4737002B9DB3 /* PPSidebarDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPSidebarDelegate.h; sourceTree = "<group>"; };
+		047F0A1B154C4737002B9DB3 /* PPSidebarDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSidebarDelegate.m; sourceTree = "<group>"; };
 		04B2DE8815426823002A85D7 /* PPPartyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPartyController.h; sourceTree = "<group>"; };
 		04B2DE8915426823002A85D7 /* PPPartyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPartyController.m; sourceTree = "<group>"; };
 		04B2DE8C15426856002A85D7 /* PPFriendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPFriendController.h; sourceTree = "<group>"; };
@@ -488,6 +509,18 @@
 				047CBCF41549922400F11B38 /* LogDataSource.m */,
 			);
 			path = log;
+			sourceTree = "<group>";
+		};
+		047F0961154C3F9A002B9DB3 /* JTRevealSidebarV2 */ = {
+			isa = PBXGroup;
+			children = (
+				047F0962154C3F9A002B9DB3 /* JTRevealSidebarV2Delegate.h */,
+				047F0963154C3F9A002B9DB3 /* UINavigationItem+JTRevealSidebarV2.h */,
+				047F0964154C3F9A002B9DB3 /* UINavigationItem+JTRevealSidebarV2.m */,
+				047F0965154C3F9A002B9DB3 /* UIViewController+JTRevealSidebarV2.h */,
+				047F0966154C3F9A002B9DB3 /* UIViewController+JTRevealSidebarV2.m */,
+			);
+			path = JTRevealSidebarV2;
 			sourceTree = "<group>";
 		};
 		04D4C23B1547026E000D1DCA /* log */ = {
@@ -697,6 +730,10 @@
 				04B2DE9515426B78002A85D7 /* DSTableViewCustomHeaderDelegate.m */,
 				04B2DE9615426B78002A85D7 /* DSTableViewCustomMarginDelegate.h */,
 				04B2DE9715426B78002A85D7 /* DSTableViewCustomMarginDelegate.m */,
+				047F0A1A154C4737002B9DB3 /* PPSidebarDelegate.h */,
+				047F0A1B154C4737002B9DB3 /* PPSidebarDelegate.m */,
+				047E3FEA154D7DC1005FDDF8 /* PPLeftSidebarTableViewDelegate.h */,
+				047E3FEB154D7DC1005FDDF8 /* PPLeftSidebarTableViewDelegate.m */,
 			);
 			path = delegate;
 			sourceTree = "<group>";
@@ -771,6 +808,7 @@
 		14BC4252154171AA00BE4FA1 /* thirdparty */ = {
 			isa = PBXGroup;
 			children = (
+				047F0961154C3F9A002B9DB3 /* JTRevealSidebarV2 */,
 			);
 			path = thirdparty;
 			sourceTree = "<group>";
@@ -792,12 +830,14 @@
 		14BC4EE8154173F800BE4FA1 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				04B2DE84154267D5002A85D7 /* PPTabBarController.h */,
-				04B2DE85154267D5002A85D7 /* PPTabBarController.m */,
 				04B2DE8815426823002A85D7 /* PPPartyController.h */,
 				04B2DE8915426823002A85D7 /* PPPartyController.m */,
 				04B2DE8C15426856002A85D7 /* PPFriendController.h */,
 				04B2DE8D15426856002A85D7 /* PPFriendController.m */,
+				047E3FE2154D6F05005FDDF8 /* PPLeftSidebarViewController.h */,
+				047E3FE3154D6F05005FDDF8 /* PPLeftSidebarViewController.m */,
+				047E3FE6154D7671005FDDF8 /* PPSquareViewController.h */,
+				047E3FE7154D7671005FDDF8 /* PPSquareViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -1218,7 +1258,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				14BC35AC154170F000BE4FA1 /* main.m in Sources */,
-				04B2DE86154267D5002A85D7 /* PPTabBarController.m in Sources */,
 				04B2DE8A15426823002A85D7 /* PPPartyController.m in Sources */,
 				04B2DE8E15426856002A85D7 /* PPFriendController.m in Sources */,
 				04B2DE9815426B78002A85D7 /* AppDelegate.m in Sources */,
@@ -1255,6 +1294,12 @@
 				044E50991548460700A1949F /* LogConf.m in Sources */,
 				044E509B1548460700A1949F /* RequestConf.m in Sources */,
 				047CBCF51549922400F11B38 /* LogDataSource.m in Sources */,
+				047F0967154C3F9A002B9DB3 /* UINavigationItem+JTRevealSidebarV2.m in Sources */,
+				047F0969154C3F9A002B9DB3 /* UIViewController+JTRevealSidebarV2.m in Sources */,
+				047F0A1C154C4737002B9DB3 /* PPSidebarDelegate.m in Sources */,
+				047E3FE4154D6F06005FDDF8 /* PPLeftSidebarViewController.m in Sources */,
+				047E3FE8154D7671005FDDF8 /* PPSquareViewController.m in Sources */,
+				047E3FEC154D7DC1005FDDF8 /* PPLeftSidebarTableViewDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1264,7 +1309,6 @@
 			files = (
 				14BC35301541643800BE4FA1 /* PapaTests.m in Sources */,
 				14BC35AD154170F000BE4FA1 /* main.m in Sources */,
-				04B2DE87154267D5002A85D7 /* PPTabBarController.m in Sources */,
 				04B2DE8B15426823002A85D7 /* PPPartyController.m in Sources */,
 				04B2DE8F15426856002A85D7 /* PPFriendController.m in Sources */,
 				04B2DE9915426B78002A85D7 /* AppDelegate.m in Sources */,
@@ -1303,6 +1347,12 @@
 				044E509F1548495700A1949F /* RequestTests.m in Sources */,
 				047CBCF61549922400F11B38 /* LogDataSource.m in Sources */,
 				047B56F2154AF2310095D11A /* RequestBatchTests.m in Sources */,
+				047F0968154C3F9A002B9DB3 /* UINavigationItem+JTRevealSidebarV2.m in Sources */,
+				047F096A154C3F9A002B9DB3 /* UIViewController+JTRevealSidebarV2.m in Sources */,
+				047F0A1D154C4737002B9DB3 /* PPSidebarDelegate.m in Sources */,
+				047E3FE5154D6F06005FDDF8 /* PPLeftSidebarViewController.m in Sources */,
+				047E3FE9154D7671005FDDF8 /* PPSquareViewController.m in Sources */,
+				047E3FED154D7DC2005FDDF8 /* PPLeftSidebarTableViewDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

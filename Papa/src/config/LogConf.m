@@ -14,7 +14,7 @@
 
 + (void) prepareLogSource:(LogSource*) logSource{
     
-    [logSource mapURL:URL_Main toPageView:PageView_Main];
+    [logSource mapURL:URL_Square toPageView:PageView_Square];
 }
 
 + (LogNavigatorDelegate*) getNavigatorDelegate{

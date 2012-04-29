@@ -241,7 +241,7 @@ const int NavigationBackgroundTag = 15769457;
             [[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:rootURLPath]];
         }
     }else{
-        [[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:@"pp://main"]];
+        [[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:@"pp://square"]];
     }
     /**
     	Should be called after open view controller in navigator

@@ -10,7 +10,7 @@
 #import "UrlPageViewDefinition.h"
 #import "Config.h"
 
-#import "PPTabBarController.h"
+#import "PPSquareViewController.h"
 #import "PPPartyController.h"
 #import "PPFriendController.h"
 ///////////////////////////////////
@@ -25,14 +25,14 @@
     [map            from:@"*" 
         toViewController:[TTWebController class]];
     
-    [map            from:URL_Main 
-  toSharedViewController:[PPTabBarController class]];
+    [map            from:URL_Square
+  toSharedViewController:[PPSquareViewController class]];
     
-    [map            from:@"pp://party" 
+    [map            from:URL_Parties 
         toViewController:[PPPartyController class]];
     
-    [map            from:@"pp://friend"
-        toViewController:[PPFriendController class]];
+    [map            from:URL_Friends
+        toSharedViewController:[PPFriendController class]];
 }
 
 // navigator map without parameter
