@@ -6,26 +6,26 @@ usage()
 {
     cat << USAGE
         Script that help you rename the project from Template to anything you like
-        usage: rename_project  -d dir < -f originName> -t newName
+        usage: rename_project  -d dir < -f OriginName> -t NewName
             -d     dir          project root directory
-            -f     originName   original project name(default 'Template')
-            -t     newName      new project name
+            -f     OriginName   Original project name(default 'Template')
+            -t     NewName      New project name
             -h     N/A          Print this message
         example:
-        $ $0 -d ./  -t newProjectName
+        $ $0 -d ./  -t NewProjectName
 USAGE
     exit 0
 }
 
 #default 
-originName="Template"
-
+OriginName="Template"
+DIR=  NewName= 
 while getopts h:d:f:t: arg
 do  case $arg in
     h) usage;;
     d) DIR=$OPTARG;;
-    f) originName=$OPTARG;;
-    t) newName=OPTARG;;
+    f) OriginName=$OPTARG;;
+    t) NewName=$OPTARG;;
     *) usage;;
 esac
 done
@@ -35,29 +35,43 @@ if [ ! -d "$DIR" ];then
     usage;
 fi
 
-if [ ! -n "$newName" ];then 
-    echo "Error: new project name needed!"
+if [ ! -n "$NewName" ];then 
+    echo "Error: New project name needed!"
     usage;
 fi
 
 pushd $DIR
-projectFile="$DIR$originName.xcodeproj/project.pbxproj"
+projectFile="$DIR$OriginName.xcodeproj/project.pbxproj"
 if [ ! -f "$projectFile" ];then
     echo "Error:'$projectFile' doesn't exit or not readable!"
 fi
 
+set -x
 # replace
-sed 's;$originName;$newName;' $projectFile
+sed "s;$OriginName;$NewName;g" $projectFile > $projectFile".bk"
+rm $projectFile
+mv $projectFile".bk" $projectFile
 
 # remove xcworkspace and xcuserdata 
-rm -rf $originName".xcodeproj/project.xcworkspace"
-rm -rf $originName".xcodeporj/xcuserdata"
+rm -rf $OriginName".xcodeproj/project.xcworkspace"
+rm -rf $OriginName".xcodeporj/xcuserdata"
+
+# rename Info.plist and Prefix.pch 
+pushd $OriginName
+mv $OriginName"-Info.plist" $NewName"-Info.plist"
+mv $OriginName"-Prefix.pch" $NewName"-Prefix.pch"
+popd 
+
+pushd $OriginName"Tests"
+mv $OriginName"Tests-Info.plist"  $NewName"Tests-Info.plist"
+popd
 
 # rename dir
-mv $originName".xcodeproj" $newName".xcodeproj"
-mv $originName"Tests" $newName"Tests"
-mv $originName $newName
+mv $OriginName".xcodeproj" $NewName".xcodeproj"
+mv $OriginName"Tests" $NewName"Tests"
+mv $OriginName $NewName
 
+set +x
 popd
 
 exit 0
