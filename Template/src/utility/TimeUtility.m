@@ -111,7 +111,7 @@
     else
     {
         strDate = [[NSString alloc] 
-                   initWithFormat : @"%04i-%02i-%02i %02i:%02i", 
+                   initWithFormat : @"%04ld-%02i-%02i %02i:%02i", 
                    date.year, date.month, date.day,
                    date.hour, date.minute];
     }

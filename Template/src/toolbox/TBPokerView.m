@@ -9,6 +9,7 @@
 #import "TBPokerView.h"
 #import "TBPokerViewCell.h"
 #import "TBPokerViewDataSource.h"
+#import "TBPokerViewDelegate.h"
 
 static inline NSString * TBPokerKeyForIndex(NSInteger index) {
     return [NSString stringWithFormat:@"%d", index];
@@ -218,7 +219,7 @@ indexToRectMap = _indexToRectMap;
             
             CGFloat left = kTableCellSmallMargin + (col * kTableCellSmallMargin) + (col * self.colWidth);
             CGFloat top = [[colOffsets objectAtIndex:col] floatValue];
-            CGFloat colHeight = [self.dataSource heightForViewAtIndex:i];
+            CGFloat colHeight = [self.dataSource pokerView:self heightForViewAtIndex:i];
             if (colHeight == 0) {
                 colHeight = self.colWidth;
             }
@@ -340,7 +341,7 @@ indexToRectMap = _indexToRectMap;
 
 #pragma mark - Reusing Views
 
-- (TBPokerViewCell *)dequeueReusableView {
+- (UIView *)dequeueReusableCellWithIdentifier:(NSString*) identifier; {
     TBPokerViewCell *view = [self.reuseableViews anyObject];
     if (view) {
         // Found a reusable view, remove it from the set

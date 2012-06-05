@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TBPokerViewController.h"
-#import "TBPokerView.h"
 
+@class TBPokerView, TBPokerViewCell;
+@class TBPokerViewController;
 
 @protocol TBPokerViewDelegate <NSObject,UIScrollViewDelegate>
 
@@ -21,9 +21,10 @@
 @end
 
 
-@protocol TBPokerViewDelegate;
+@interface TBPokerViewDelegate : NSObject <TBPokerViewDelegate>{
+    TBPokerViewController* _controller;
+}
 
-@interface TBPokerViewDelegate : NSObject <TBPokerViewDelegate,UIScrollViewDelegate>
 - (id)initWithController:(TBPokerViewController*)controller;
 
 @property (nonatomic, assign) TBPokerViewController* controller;

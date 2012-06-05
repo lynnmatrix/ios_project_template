@@ -170,6 +170,8 @@
 		14BC35231541643700BE4FA1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14BC35221541643700BE4FA1 /* SenTestingKit.framework */; };
 		14BC35241541643700BE4FA1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14BC34F61541643700BE4FA1 /* UIKit.framework */; };
 		14BC35251541643700BE4FA1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14BC34F81541643700BE4FA1 /* Foundation.framework */; };
+		14C5B94E157DAB2D008389D3 /* TBPokerViewNetworkEnabledDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C5B94D157DAB2D008389D3 /* TBPokerViewNetworkEnabledDelegate.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		14C5B94F157DAB2D008389D3 /* TBPokerViewNetworkEnabledDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C5B94D157DAB2D008389D3 /* TBPokerViewNetworkEnabledDelegate.m */; };
 		14E4FC25157CCD9100F20E76 /* TBPokerViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E4FC24157CCD9000F20E76 /* TBPokerViewDataSource.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		14E4FC26157CCD9100F20E76 /* TBPokerViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 14E4FC24157CCD9000F20E76 /* TBPokerViewDataSource.m */; };
 		32005DD2DD4BE82AFAA88C85 /* libextThree20JSON+YAJL.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 32005DD2DD4BE82AFAA88C84 /* libextThree20JSON+YAJL.a */; };
@@ -541,6 +543,8 @@
 		14BC34FA1541643700BE4FA1 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		14BC35211541643700BE4FA1 /* TemplateTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TemplateTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14BC35221541643700BE4FA1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		14C5B94C157DAB2D008389D3 /* TBPokerViewNetworkEnabledDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBPokerViewNetworkEnabledDelegate.h; sourceTree = "<group>"; };
+		14C5B94D157DAB2D008389D3 /* TBPokerViewNetworkEnabledDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBPokerViewNetworkEnabledDelegate.m; sourceTree = "<group>"; };
 		14E4FC23157CCD9000F20E76 /* TBPokerViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBPokerViewDataSource.h; sourceTree = "<group>"; };
 		14E4FC24157CCD9000F20E76 /* TBPokerViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBPokerViewDataSource.m; sourceTree = "<group>"; };
 		32005DD2DD4BE82AFAA88C80 /* extThree20JSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = extThree20JSON.xcodeproj; path = thirdparty/three20/src/extThree20JSON/extThree20JSON.xcodeproj; sourceTree = SOURCE_ROOT; };
@@ -896,6 +900,8 @@
 				14E4FC24157CCD9000F20E76 /* TBPokerViewDataSource.m */,
 				149E2282157C574D00B35BC6 /* TBPokerViewDelegate.h */,
 				149E2283157C574D00B35BC6 /* TBPokerViewDelegate.m */,
+				14C5B94C157DAB2D008389D3 /* TBPokerViewNetworkEnabledDelegate.h */,
+				14C5B94D157DAB2D008389D3 /* TBPokerViewNetworkEnabledDelegate.m */,
 				146A04E2155A4AE000F6F4B9 /* TBRadioButtonGroup.h */,
 				146A04E3155A4AE000F6F4B9 /* TBRadioButtonGroup.m */,
 				146A04E4155A4AE000F6F4B9 /* TBRatableFiveStarView.h */,
@@ -1473,6 +1479,7 @@
 				149E2284157C574D00B35BC6 /* TBPokerViewDelegate.m in Sources */,
 				149E22D5157C62A300B35BC6 /* TBPokerViewController.m in Sources */,
 				14E4FC25157CCD9100F20E76 /* TBPokerViewDataSource.m in Sources */,
+				14C5B94E157DAB2D008389D3 /* TBPokerViewNetworkEnabledDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1533,6 +1540,7 @@
 				146A057D155A4AE000F6F4B9 /* TimeUtility.m in Sources */,
 				146A057F155A4AE000F6F4B9 /* Utility.m in Sources */,
 				14E4FC26157CCD9100F20E76 /* TBPokerViewDataSource.m in Sources */,
+				14C5B94F157DAB2D008389D3 /* TBPokerViewNetworkEnabledDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

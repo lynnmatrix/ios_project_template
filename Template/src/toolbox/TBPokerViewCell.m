@@ -13,23 +13,22 @@
 @synthesize
 object = _object;
 
-- (id)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:frame];
-    if (self) {
+@synthesize reuseIdentifier =_reuseIdentifier;
+
+- (id) initWithReuseIdentifier:(NSString*)reuseIdentifier{
+    if (self = [super init]) {
+        self.reuseIdentifier = reuseIdentifier;
     }
     return self;
 }
 
 - (void)dealloc {
     self.object = nil;
+    TT_RELEASE_SAFELY(_reuseIdentifier);
     [super dealloc];
 }
 
 - (void)prepareForReuse {
-}
-
-- (void)fillViewWithObject:(id)object {
-    self.object = object;
 }
 
 + (CGFloat)heightForViewWithObject:(id)object inColumnWidth:(CGFloat)columnWidth {

@@ -7,6 +7,11 @@
 //
 
 #import "TBPokerViewDelegate.h"
+#import "TBPokerViewController.h"
+#import "TBPokerViewDataSource.h"
+#import "TBPokerView.h"
+#import "TBPokerViewCell.h"
+
 
 @implementation TBPokerViewDelegate
 @synthesize controller = _controller;
@@ -21,7 +26,16 @@
 #pragma mark TBPokerViewDelegate
 
 - (void)pokerView:(TBPokerView *)pokerView didSelectView:(TBPokerViewCell *)view atIndex:(NSInteger)index{
-
+    id object = view.object;
+    if ([object isKindOfClass:[TTTableLinkedItem class]]) {
+        TTTableLinkedItem* item = object;
+        if (item.URL && [_controller shouldOpenURL:item.URL]) {
+            TTOpenURLFromView(item.URL, pokerView);
+            
+        } else if (item.delegate && item.selector) {
+            [item.delegate performSelector:item.selector withObject:object];
+        }
+    }
 }
 
 #pragma mark -
@@ -55,11 +69,11 @@
     
     [_controller didBeginDragging];
     
-    if ([scrollView isKindOfClass:[TBPokerView class]]) {
-        TBPokerView* pokerView = (TBPokerView*)scrollView;
+//    if ([scrollView isKindOfClass:[TBPokerView class]]) {
+//        TBPokerView* pokerView = (TBPokerView*)scrollView;
 //        pokerView.highlightedLabel.highlightedNode = nil;
 //        pokerView.highlightedLabel = nil;
-    }
+//    }
 }
 
 

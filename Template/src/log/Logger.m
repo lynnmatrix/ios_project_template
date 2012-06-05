@@ -73,7 +73,7 @@
     
     NSString* clickPosStr = [request.params objectForKey:clickPosName];
     if (clickPosStr.length>0) {
-        clickPosStr=[clickPosStr stringByAppendingFormat:@",",clickPos];
+        clickPosStr=[clickPosStr stringByAppendingFormat:@",%d",clickPos];
     }else {
         clickPosStr = [NSString stringWithFormat:@"%d",clickPos];
     }

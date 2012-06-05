@@ -118,7 +118,7 @@
     }
     NSString* preText = [originalText substringToIndex:range.location];
     NSString* suffixText = [originalText substringFromIndex:(range.location+range.length)];
-    NSString* newText = [NSString stringWithFormat:@"%@%@%@%",preText,text,suffixText];
+    NSString* newText = [NSString stringWithFormat:@"%@%@%@",preText,text,suffixText];
     if (newText.length> _maxTextLength)
     {
         NSString* alert = [NSString stringWithFormat:@"%@%d%@",
