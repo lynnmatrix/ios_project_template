@@ -19,4 +19,5 @@
 @property (nonatomic, readonly) UIColor* grayTextColor;
 @property (nonatomic, readonly) UIColor* hintTextColor;
 @property (nonatomic, readonly) UIColor* orangeTextColor;
+@property (nonatomic, readonly) UIColor* pokerViewBackgroundColor;
 @end

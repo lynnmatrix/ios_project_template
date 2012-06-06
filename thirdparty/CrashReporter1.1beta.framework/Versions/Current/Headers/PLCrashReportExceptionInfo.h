@@ -27,54 +27,39 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "PLCrashReportThreadInfo.h"
 
-@interface PLCrashReportBinaryImageInfo : NSObject {
+
+@interface PLCrashReportExceptionInfo : NSObject {
 @private
-    /** Base image address */
-    uint64_t _baseAddress;
+    /** Name */
+    NSString *_name;
 
-    /** Image segment size */
-    uint64_t _imageSize;
+    /** Reason */
+    NSString *_reason;
 
-    /** Name of binary image */
-    NSString *_imageName;
-
-    /** If the UUID is available */
-    BOOL _hasImageUUID;
-
-    /** 128-bit object UUID. May be nil. */
-    NSString *_imageUUID;
+    /** Ordered list of PLCrashReportStackFrame instances, or nil if unavailable. */
+    NSArray *_stackFrames;
 }
 
-- (id) initWithImageBaseAddress: (uint64_t) baseAddress 
-                      imageSize: (uint64_t) imageSize
-                      imageName: (NSString *) imageName
-                      imageUUID: (NSString *) imageUUID;
+- (id) initWithExceptionName: (NSString *) name reason: (NSString *) reason;
+
+- (id) initWithExceptionName: (NSString *) name 
+                      reason: (NSString *) reason
+                 stackFrames: (NSArray *) stackFrames;
 
 /**
- * Image base address.
+ * The exception name.
  */
-@property(nonatomic, readonly) uint64_t imageBaseAddress;
+@property(nonatomic, readonly) NSString *exceptionName;
 
 /**
- * Segment size.
+ * The exception reason.
  */
-@property(nonatomic, readonly) uint64_t imageSize;
+@property(nonatomic, readonly) NSString *exceptionReason;
 
-/**
- * Image name (absolute path)
- */
-@property(nonatomic, readonly) NSString *imageName;
-
-
-/**
- * YES if this image has an associated UUID.
- */
-@property(nonatomic, readonly) BOOL hasImageUUID;
-
-/**
- * 128-bit object UUID (matches Mach-O DWARF dSYM files). May be nil if unavailable.
- */
-@property(nonatomic, readonly) NSString *imageUUID;
+/* The exception's original call stack, as an array of PLCrashReportStackFrameInfo instances, or nil if unavailable.
+ * This may be preserved across rethrow of an exception, and can be used to determine the original call stack. */
+@property(nonatomic, readonly) NSArray *stackFrames;
 
 @end

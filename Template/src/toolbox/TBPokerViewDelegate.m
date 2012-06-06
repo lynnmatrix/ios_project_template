@@ -36,6 +36,8 @@
             [item.delegate performSelector:item.selector withObject:object];
         }
     }
+    
+    [_controller didSelectObject:object atIndex:index];
 }
 
 #pragma mark -
@@ -57,9 +59,9 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-//    if (_controller.menuView) {
-//        [_controller hideMenu:YES];
-//    }
+    if (_controller.menuView) {
+        [_controller hideMenu:YES];
+    }
 }
 
 

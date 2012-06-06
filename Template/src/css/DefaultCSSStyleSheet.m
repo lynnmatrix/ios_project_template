@@ -30,6 +30,9 @@
     return RGBCOLOR(239, 236, 220);
 }
 
+- (UIColor*) pokerViewBackgroundColor{
+    return RGBCOLOR(239, 236, 220);
+}
 
 - (UITableViewCellSelectionStyle)tableSelectionStyle {
     return UITableViewCellSelectionStyleNone;

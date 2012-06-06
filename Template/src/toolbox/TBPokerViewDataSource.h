@@ -54,8 +54,8 @@
 
 
 @interface TBPokerViewDataSource : NSObject <TBPokerViewDataSource> {
-    id<TTModel>         _model;
-      NSMutableArray*   _items;
+    id<TTModel>       _model;
+    NSMutableArray*   _items;
 }
 
 @property (nonatomic, retain) NSMutableArray* items;
@@ -66,4 +66,14 @@
 - (id)initWithItems:(NSArray*)items;
 
 - (NSIndexPath*)indexPathOfItemWithUserInfo:(id)userInfo;
+@end
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+/**
+ * A datasource that is eternally loading.  Useful when you are in between data sources and
+ * want to show the impression of loading until your actual data source is available.
+ */
+@interface TBPokerViewInterstitialDataSource : TBPokerViewDataSource <TTModel>
 @end

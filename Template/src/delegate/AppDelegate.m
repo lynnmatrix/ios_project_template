@@ -147,11 +147,11 @@ const int NavigationBackgroundTag = 15769457;
      exception_name     :%@\n \
      signal_name        :%@\n \
      signal_code        :%@\n \
-     signal_address     :%x\n ",
+     signal_address     :%llx\n ",
      [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleExecutable"],
      report.applicationInfo.applicationIdentifier,
      report.systemInfo.operatingSystemVersion,
-     report.machineInfo.modelName,
+     TTDeviceModelName(),
      report.applicationInfo.applicationVersion,
      [[NSLocale currentLocale] localeIdentifier],
      report.exceptionInfo.exceptionName,
