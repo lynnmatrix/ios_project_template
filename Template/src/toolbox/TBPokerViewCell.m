@@ -10,8 +10,7 @@
 
 @implementation TBPokerViewCell
 
-@synthesize
-object = _object;
+@synthesize object = _object;
 
 @synthesize reuseIdentifier =_reuseIdentifier;
 

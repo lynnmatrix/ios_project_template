@@ -62,7 +62,7 @@
             and userInfo contain status code for key "status"
 	@returns parsed data
  */
-//- (id) parseResponse:(PBCodedInputStream *)input;
+- (id) parseResponse:(PBCodedInputStream *)input;
 
 
 /**

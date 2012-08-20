@@ -21,13 +21,16 @@
 
 - (void) viewDidLoad{
     [super viewDidLoad];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize  target:self action:@selector(revealLeftSidebar:)];
+    self.navigationItem.leftBarButtonItem
+    = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemOrganize
+                                                    target:self
+                                                    action:@selector(toggleSidebar:)];
     
     self.navigationItem.revealSidebarDelegate = [PPSidebarDelegate sharedPPSidebarDelegate];
 
 }
 
-- (void)revealLeftSidebar:(id)sender {
+- (void)toggleSidebar:(id)sender {
     [self.navigationController toggleRevealState:JTRevealedStateLeft];
 }
 

@@ -9,6 +9,7 @@
 #import "Request.h"
 #import "RequestDataSource.h"
 #import "TBGlobalErrorView.h"
+#import "RequestConf.h"
 
 @implementation Request
 
@@ -101,6 +102,28 @@
         return contentEntry;
     }
 
+    return nil;
+}
+
+- (id) parseResponse:(PBCodedInputStream *)input
+{
+    MsgApiStatus* status = [MsgApiStatus parseFromData:[input readData]];
+    if(status.code == STATUS_SUCCESS)
+    {
+        Class returnClass = [[RequestDataSource globalRequestDataSource] getReturnClass:_type];
+        if (returnClass!=nil) {
+            id returnValue=nil;
+            returnValue = [returnClass parseFromData:[input readData]];
+            return returnValue;
+        }
+    }else
+    {
+        TTDERROR(@"%d:%@", status.code,status.message);
+        @throw [NSException exceptionWithName:@"DSRequest parseResponse" 
+                                       reason:status.message 
+                                     userInfo:[NSDictionary dictionaryWithObject:status 
+                                                                          forKey:@"status"]];
+    }
     return nil;
 }
 

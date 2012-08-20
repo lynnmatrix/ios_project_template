@@ -32,7 +32,6 @@
         [_animatedImage setAnimationDuration:1.0];
         [_bezelView addSubview:_animatedImage];
         [_animatedImage startAnimating];
-        NSLog(@"%@", _animatedImage);
         _label.font = TTSTYLEVAR(font);
     }
     return self;

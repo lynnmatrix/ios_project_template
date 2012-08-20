@@ -43,7 +43,7 @@
 	@param input :data to be parsed
 	@returns dictionary contains parsed response for every api with key for method 
  */
-//- (NSDictionary*) parseResponse:(PBCodedInputStream *)input;
+- (NSDictionary*) parseResponse:(PBCodedInputStream *)input;
 
 - (NSDictionary*) parseJSONResponse:(id) input
                              status:(NSMutableDictionary**) status;

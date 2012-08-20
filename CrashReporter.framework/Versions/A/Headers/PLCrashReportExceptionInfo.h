@@ -27,33 +27,39 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "PLCrashReportThreadInfo.h"
 
-@interface PLCrashReporter : NSObject {
+
+@interface PLCrashReportExceptionInfo : NSObject {
 @private
-    /** YES if the crash reporter has been enabled */
-    BOOL _enabled;
+    /** Name */
+    NSString *_name;
 
-    /** Application identifier */
-    NSString *_applicationIdentifier;
+    /** Reason */
+    NSString *_reason;
 
-    /** Application version */
-    NSString *_applicationVersion;
-
-    /** Path to the crash reporter internal data directory */
-    NSString *_crashReportDirectory;
+    /** Ordered list of PLCrashReportStackFrame instances, or nil if unavailable. */
+    NSArray *_stackFrames;
 }
 
-+ (PLCrashReporter *) sharedReporter;
+- (id) initWithExceptionName: (NSString *) name reason: (NSString *) reason;
 
-- (BOOL) hasPendingCrashReport;
+- (id) initWithExceptionName: (NSString *) name 
+                      reason: (NSString *) reason
+                 stackFrames: (NSArray *) stackFrames;
 
-- (NSData *) loadPendingCrashReportData;
-- (NSData *) loadPendingCrashReportDataAndReturnError: (NSError **) outError;
+/**
+ * The exception name.
+ */
+@property(nonatomic, readonly) NSString *exceptionName;
 
-- (BOOL) purgePendingCrashReport;
-- (BOOL) purgePendingCrashReportAndReturnError: (NSError **) outError;
+/**
+ * The exception reason.
+ */
+@property(nonatomic, readonly) NSString *exceptionReason;
 
-- (BOOL) enableCrashReporter;
-- (BOOL) enableCrashReporterAndReturnError: (NSError **) outError;
+/* The exception's original call stack, as an array of PLCrashReportStackFrameInfo instances, or nil if unavailable.
+ * This may be preserved across rethrow of an exception, and can be used to determine the original call stack. */
+@property(nonatomic, readonly) NSArray *stackFrames;
 
 @end

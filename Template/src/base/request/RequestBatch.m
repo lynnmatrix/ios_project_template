@@ -103,20 +103,20 @@
 
 }
 
-//- (NSDictionary*) parseResponse:(PBCodedInputStream *)input
-//{
-//    NSMutableDictionary* result = [NSMutableDictionary dictionaryWithCapacity:3];
-//    
-//    for (DSRequest* request in _requestArray) {
-//        id data = [request parseResponse:input];
-//        TTDINFO(@"%@ parsed",[DSRequestUtility getMethod:request.type]);
-//        if (data) {
-//            [result setObject:data
-//                       forKey:[NSString stringWithFormat:@"%d",request.type]];
-//        }
-//    }
-//    return result;
-//}
+- (NSDictionary*) parseResponse:(PBCodedInputStream *)input
+{
+    NSMutableDictionary* result = [NSMutableDictionary dictionaryWithCapacity:3];
+    
+    for (Request* request in _requestArray) {
+        id data = [request parseResponse:input];
+        TTDINFO(@"%@ parsed",[DSRequestUtility getMethod:request.type]);
+        if (data) {
+            [result setObject:data
+                       forKey:[NSString stringWithFormat:@"%d",request.type]];
+        }
+    }
+    return result;
+}
 
 - (void) clearRequests
 {

@@ -1,0 +1,338 @@
+package silmaril;
+
+option java_package="outfox.silmaril.base.protobuf";
+option java_outer_classname="SilmarilProtos";
+
+// 客户端检查更新状态
+enum UpdateStatus{
+    INVALID = -1;
+    LATEST = 0;
+    OUTDATED = 1;
+    DISCARD = 2;
+}
+
+// 用户可选的出行方式
+enum TrafficMode{
+    INVALID_MODE = -1;    // enum values use C++ scoping rules
+    WALK = 0;             // 步行
+    BUS = 1;              // 公交
+    DRIVE = 2;            // 开车
+    TRAIN = 3;            // 火车
+    FLY = 4;              // 灰机
+}
+
+// 用于Personalize接口的参数定义
+message PersonalizeParams {
+    // 用户personalize中可选的筛选类别
+    enum Type {
+        INVALID = -1;   // 无效
+        ALL = 0;        // 默认，给出所有
+        NEARBY = 1;     // 附近
+        HOME = 2;       // 家乡
+        CITY = 3;       // 全城热门
+        AREAS = 4;      // 常去商圈
+    }
+}
+
+// 用于Recommend接口的参数定义
+message RecommendParams {
+    // 推荐类型
+    enum Type {
+        INVALID = -1;   // 无效
+        NORMAL = 0;     // 正常推荐
+        CITY = 1;       // 全城推荐
+        EDITOR = 2;     // 达人推荐
+        SEARCH = 3;	    // 搜索
+    }
+    
+    enum ReasonType {
+        SIMILAR = 0;            // 协同理由，喜欢A的人都喜欢B
+        CHAIN = 1;              // 连锁店理由
+        CHAIN_SIMILAR = 2;      // 连锁店协同理由
+        REGION_BOARD_NEAR = 3;  // 附近区域榜单理由
+        REGION_BOARD_AREA = 4;  // 自然区域榜单理由
+        REGION_BOARD_CITY = 5;  // 全城热门
+        ARTI_BOARD = 6;         // 人工榜单理由
+        HOME = 7;               // 家乡热门
+        CUBE = 8;               // 在八方中签到过
+        WEIBO = 9;              // 在微博中提到过
+        EDITOR_REC = 10;        // 达人推荐
+        SDISH = 11;             // 因为有包含的特色菜
+        RANDOM = 12;            // 随机理由
+        JINGXUAN = 13;          // 精选的理由
+        
+        SIMILAR_DISH = 21;      // 协同过滤方法得到的推荐菜品
+        FAVOR_CURRENT_DISH = 22;// 用户在当前餐馆喜欢的菜品
+        FAVOR_GLOBAL_DISH = 23; // 用户全局喜欢的菜品
+        SOLO_DISH = 24;         // 餐馆特色菜品
+        BASE_DISH = 25;         // 基本推荐菜品
+        DISLIKE_DISH = 26;      // 不喜爱的菜品
+    }
+}
+
+// 用于Correct接口的参数定义
+message ErrorReportParams {
+    // 纠错类型
+    enum Type {
+        INVALID = -1;           // 无效
+        REST_NOT_EXSIST = 0;    // 餐馆不存在
+        REST_STYLE_ERROR = 1;   // 餐馆类别错误
+        REST_ADDRESS_ERROR = 2; // 餐馆位置或地址错误
+        REST_TEL_ERROR = 3;     // 餐馆电话信息错误
+        REST_CLOSED = 4;        // 餐馆已停业/关门
+        // ...
+        REST_OTHER_ERROR = 9;   // 餐馆其它信息错误
+    
+        DISH_NOT_EXSIST = 10;   // 菜品不存在
+        DISH_AT_ERROR = 11;     // 菜品不属于某个餐馆
+        // ...
+        DISH_OTHER_ERROR = 15;  // 菜品其它信息错误
+    }
+}
+
+// 用于Suggest接口的参数定义
+message SuggestParams {
+    // 提示类型
+    enum Type {
+        INVALID = -1;     // 无效
+        RESTAURANT = 0;   // 餐馆提示
+        DISH = 1;         // 菜品提示
+    }
+}
+
+message MsgUpdateInfo {
+    required UpdateStatus status = 1; // 更新状态
+    optional string os = 2; // 平台(android/iphone等)
+    optional string latestversion = 3; // 最新版本号
+    optional string downloadurl = 4; // 下载地址 
+}
+
+// Api返回状态
+message MsgApiStatus {
+    required int32 code = 1;
+    optional string message = 2;
+    optional int32 execTime = 3;
+    optional string debugInfo = 4;
+}
+
+// 搜索提示结果列表
+message MsgSuggestions {
+    repeated MsgSuggestion suggestions = 1;
+}
+
+// 搜索提示结果
+message MsgSuggestion {
+    required string content = 1;
+}
+
+// 餐馆基本信息
+message MsgRestBrief {
+    // 前32个域留给餐馆本身相关，从33开始为与用户相关的域
+    required int64  id = 1;         // 餐馆id
+    required string name = 2;       // 餐馆名称
+    required string city = 3;       // 餐馆所在城市
+    required string style = 4;      // 餐馆style，如菜系等
+    required string address = 5;    // 餐馆所在地址
+    required float  avgPay = 6;     // 餐馆平均消费
+    required double longitude = 7;  // 餐馆经度
+    required double latitude = 8;   // 餐馆纬度
+    required float  srank = 9;      // 餐馆静态评分
+}
+
+// 餐馆详情信息
+message MsgRestDetail {
+    optional string tel = 1;        // 电话
+    optional string desc = 2;       // 简介
+    optional string dishes = 3;     // 推荐菜
+    optional string special = 4;    // 特色, 如可以刷卡, 无线上网, 有下午茶, 免费停车等
+    optional string shophour = 5;   // 营业时间
+    optional string traffic = 6;    // 交通 
+    optional string situation = 7;  // 餐厅氛围
+    optional string image = 8;      // 大图链接
+    optional MsgMoreDetails moredetails = 9; //详情信息 
+    optional string imagecategory = 10; // 客户端需要显示的图片类型
+}
+
+message MsgMoreDetails {
+	repeated MsgMoreDetail detail = 1;     // 每条详情信息
+}
+
+message MsgMoreDetail {
+	optional string label = 1;     // 客户端显示的标签
+	optional string payload = 2;   // 信息载体，微薄地址，官网地址
+}
+
+// 用户对一个餐馆的操作数据
+message MsgRestUgc {
+    optional float  rate = 1 [default = 0]; // 用户打分
+    optional int64  rateTime = 2;           // 打分时间
+    optional bool   favored = 3;            // 是否已收藏
+    optional string commentString = 4;      // 如果有评论，评论内容
+}
+
+// 推荐相关数据
+message MsgRestRecommend {
+    // 以下：与推荐相关
+    optional float  dist = 1;       // 与用户的距离
+    optional float  predicted = 2;  // 预测打分
+    optional float  rank = 3;       // 最终得分, 与排序有关
+    
+    repeated string reasons = 4;    // 推荐理由, 支持简单的结构化标记 deprecated@0.6
+    repeated RecommendParams.ReasonType reasonTypes = 5; // 推荐理由类型，与reasons域对应 deprecated@0.6
+    
+    repeated MsgReasonInfo reasonInfos = 6;         // 0.6版本开始使用的推荐理由信息
+}
+
+message MsgReasonInfo {
+    required string reason = 1;     // 推荐理由, 支持简单的结构化标记
+    required int32 type = 2;        // 推荐理由类型
+}
+
+message MsgEditorSelected {
+    optional float  dist = 1;         //与用户的距离
+    optional string selectedText = 2; //餐馆在精选页的描述
+    optional string dishes = 3;       //精选推荐菜
+    optional string imageType = 4;    //餐馆对应的图片类型
+    optional string imageUrl = 5;     //存放在服务器端的图片地址
+    optional int32  batch = 6;        //本次精选的批次
+    optional string title = 7;        //标题
+    optional string detailText = 8;   //餐馆详情页中文案
+}
+
+// 餐馆信息
+message MsgRestInfo {
+    optional MsgRestBrief         brief = 1;    // 餐馆简介
+    optional MsgRestDetail        detail = 2;   // 餐馆详情
+    optional MsgRestUgc           ugc = 3;      // 用户操作数据，如打分/收藏/评论
+    optional MsgRestRecommend     rec = 4;      // 推荐相关数据
+    repeated MsgDish              dishes = 5;   // 推荐菜，包括用户喜欢的
+    optional MsgEditorSelected    selected = 6; // 饭饭精选的相关内容
+}
+
+// 餐馆列表
+message MsgRestInfos {
+    repeated MsgRestInfo rests = 1;
+}
+
+// 餐馆评论信息
+message MsgRestComment {
+    required int64 commentId = 1;       // 评论id
+    required int64 restaurantId = 2;    // 评论针对的餐馆id
+    required int64 userId = 3;          // 评论者id
+    optional string userName = 4;       // 评论者名称
+    optional int64 userImage = 5;       // 评论者头像
+    required string content = 6;        // 评论内容
+    optional float rate = 7;            // 评分，要根据是否此条为此用户对此餐馆的最新带评分的评论决定是否显示
+    optional int64 time = 8;            // 评论时间
+    optional float avgPay = 9;          // 平均消费
+}
+
+// 评论列表
+message MsgRestComments {
+    repeated MsgRestComment comments = 1;
+}
+
+// 绑定帐号信息
+message MsgBindingAcccount {
+    required int32 type = 1; // 类型: 网易通行证, 新浪微博 ...
+    required string id = 2;
+}
+
+// 用户信息
+message MsgUserInfo {
+    required int64 id = 1;
+    required string name = 2;
+    required int64 createTime = 3;
+    repeated MsgBindingAcccount bindings = 4;
+    optional string home = 5;
+    optional string company = 6;
+    optional TrafficMode trafficMode = 7;
+    repeated string areas = 8; // 不同的商圈以逗号分隔
+    
+    optional int32 ratecount = 9;      // 打过分的餐馆数量
+    optional int32 favorcount = 10;    // 喜爱的餐馆数量
+}
+
+// 绑定(包括通过绑定帐号登录)操作结果
+message MsgBindResult {
+    required MsgUserInfo user = 1;
+    optional string extra = 2; // 额外信息, 客户端通过本次绑定的帐号类型判断如何解释该数据
+}
+
+message MsgBoard {
+    repeated string items = 1; // 榜单中的一条(餐馆)，用Markup方式解析
+}
+
+// 推荐菜列表
+message MsgDishes {
+    repeated MsgDish dishes = 1;    // 一个推荐菜
+}
+
+// 推荐菜
+message MsgDish {
+    required string name = 1;       // 推荐菜名称
+    optional string restaurant = 2; // 对应餐馆的结构化标记
+    repeated string reasons = 3;    // 推荐的理由，支持简单的结构化标记
+    optional float  rate = 4;       // 是否已标记喜欢（为支持扩展，使用float）
+    
+    optional int64  cofreq = 11;      // 同现次数
+    optional double predicted = 12;   // 预测打分
+    optional double rank = 13;        // 最终得分, 与排序有关
+    optional double correlation = 14; // 最终得分, 与排序有关
+    
+    optional string detail = 15;      // 计算过程中数据
+}
+
+message MsgRelatedRest {
+    repeated string restaurant = 1;   // 餐馆的结构化标记
+}
+
+// 广告位
+message MsgBanner {
+    required string id = 1;         // banner的id
+    optional string title = 2;      // 标题
+    optional string desc = 3;       // 描述
+    optional string imageUrl = 4;   // 图片的url
+    optional string url = 5;        // 跳转的url
+    optional string target = 6;     // 供点击跳转的markup
+}
+
+// list出omap中的data数据
+message MsgTableData {
+    required string tableName = 1;
+    repeated string fieldNames = 2;
+    repeated MsgTableRow rows = 3;
+}
+
+// 表中的一行数据
+message MsgTableRow {
+    repeated string fieldValues = 1;
+}
+
+// 文案数据
+message MsgTextInfo {
+	optional string text = 1;        //文案
+}
+
+// 用户token信息列表
+message MsgTokenInfos {
+    repeated MsgTokenInfo tokens = 1;
+}
+
+// 单个用户token信息
+message MsgTokenInfo {
+    optional int64 userId = 1;	    //用户id
+    optional string token = 2;      //用户token
+}
+
+// 动态更新的数据
+message MsgDynamicInfo {
+    repeated MsgSelectedCity selectedCitys = 1;    //饭饭精选城市列表
+}
+
+// 饭饭精选城市信息
+message MsgSelectedCity {
+    optional string city = 1;    //城市名称
+    optional bool status = 2;    //是否可用
+    optional int32 len = 3;      //城市中精选的数量
+}

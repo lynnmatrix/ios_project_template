@@ -1,3 +1,6 @@
 [submodule "thirdparty/three20"]
 	path = thirdparty/three20
 	url = git://github.com/facebook/three20.git
+[submodule "thirdparty/protobuf-objc"]
+	path = thirdparty/protobuf-objc
+	url = https://github.com/booyah/protobuf-objc.git

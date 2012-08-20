@@ -12,27 +12,9 @@
  */
 typedef enum API_Method{
 	API_NONE, /**< unknow api */
-	API_NEWUSER, /**< newuser */
-	API_BINDNTES, /**< bindntes */
-	API_BINDSINA, /**< bindsian */
-	API_MYRATES, /**< myrate */
-	API_RATE, /**< rate */
-	API_RECOMMEND, /**< recommend */
-	API_RESTINFO, /**< restinfo */
-	API_RESTCOMMENTS, /**< restcomments */
-	API_COMMENT, /**< comment */
-	API_USERCOMMENTS, /**< usercomments */
-	API_MYFAVORS, /**< myfavors */
-	API_SETUSERIINFO, /**< setuserinfo */
-	API_FAVOR, /**< favor */
-	API_UNFAVOR, /**< unfavor */
-	API_COMPLAINT, /**< complaint */
-	API_SUGGEST, /**< suggest */
-    API_LOG, /**< silmarllog*/
+    API_LOG, /**< log*/
     API_CHECKUPDATE, /**< checkupdate*/
-    API_OPENAPP,
-    API_BOARD, /**board**/
-    API_PERSONALIZE
+    API_OPENAPP
 }API_Method;
 
 

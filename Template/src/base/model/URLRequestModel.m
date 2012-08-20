@@ -18,6 +18,8 @@
 #import "Utility.h"
 #import "TimeUtility.h"
 #import "Logger.h"
+#import "CodedInputStream.h"
+#import "RequestConf.h"
 
 static int lastDelay = 0;
 
@@ -183,10 +185,11 @@ static int lastDelay = 0;
         [self clearModel];
     }
     switch (self.responseFormat) {
-        case FormatProtocolBuffer:
-//            PBCodedInputStream * input = [PBCodedInputStream streamWithData:response.data];
-//            [self parseResponse:input]
+        case FormatProtocolBuffer:{
+            PBCodedInputStream * input = [PBCodedInputStream streamWithData:response.data];
+            [self parseResponse:input];
             break;
+        }
         case FormatJSON:
             [self parseJSONResponse:request.response];
             break;
@@ -301,6 +304,30 @@ static int lastDelay = 0;
     }
     @catch (NSException *exception) {
         TTDINFO(@"thow exception");
+        if (_willShowFailure) {
+            [TBGlobalErrorView showRequestFailureView];
+        }
+    }
+}
+
+- (void)parseResponse:(PBCodedInputStream *)input 
+{
+    @try {
+        NSDictionary * result = [_requestBatch parseResponse:input];
+        if (result==nil) {
+            TTDWARNING(@"null response");
+        }
+        [self.responseDict addEntriesFromDictionary:result];
+    }
+    @catch (NSException *exception) {
+        TTDINFO(@"throw exception");
+        MsgApiStatus* status = [exception.userInfo objectForKey:@"status"];
+        if (nil!=status) {
+            TTDERROR(@"exception:%i,%@",status.code,status.message);
+            [self.responseDict setValue:status
+                                 forKey:@"status"];
+        }
+        
         if (_willShowFailure) {
             [TBGlobalErrorView showRequestFailureView];
         }
