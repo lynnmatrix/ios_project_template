@@ -11,5 +11,4 @@
 
 #define IRI_Rest                    @"iri://rest?id=(initWithRid:)"
 
-#define IRI_Friends             @"iri://friends"
-#define IRI_Parties             @"iri://parties"
+//#define IRI_Search                  @"iri://search?key=(initWithKey:)"

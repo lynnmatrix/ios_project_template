@@ -7,7 +7,7 @@
 //
 
 #import "PPLeftSidebarViewController.h"
-#import "PPLeftSidebarTableViewDelegate.h"
+#import "LeftSidebarTableViewDelegate.h"
 #import "UrlPageViewDefinition.h"
 
 @interface PPLeftSidebarViewController ()
@@ -19,10 +19,12 @@
 - (void)createModel{
     self.dataSource = [TTListDataSource dataSourceWithObjects:
                        [TTTableTextItem itemWithText:NSLocalizedString(@"推荐", nil) URL:IRI_Recommend],
-                       [TTTableTextItem itemWithText:NSLocalizedString(@"menu2", nil) URL:IRI_Friends],nil];
+                       /**[TTTableTextItem itemWithText:NSLocalizedString(@"搜索", nil)
+                        URL:[NSString stringWithFormat:@"iri://search?key=%@",[@"苏浙汇" urlEncoded]]],**/
+                       nil];
 }
 
 - (id<UITableViewDelegate>)createDelegate {
-    return [[PPLeftSidebarTableViewDelegate alloc] init];
+    return [[LeftSidebarTableViewDelegate alloc] initWithController:self];
 }
 @end

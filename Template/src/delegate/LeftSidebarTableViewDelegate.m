@@ -6,10 +6,10 @@
 //  Copyright (c) 2012年 . All rights reserved.
 //
 
-#import "PPLeftSidebarTableViewDelegate.h"
+#import "LeftSidebarTableViewDelegate.h"
 #import "UIViewController+JTRevealSidebarV2.h"
 
-@implementation PPLeftSidebarTableViewDelegate
+@implementation LeftSidebarTableViewDelegate
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     UIViewController* currentVC = [[TTNavigator navigator] visibleViewController];

@@ -19,6 +19,14 @@
 		1436E756155A4E00004746C3 /* TemplateTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1436E755155A4E00004746C3 /* TemplateTests-Info.plist */; };
 		145D1C2615E22A87007D5FBF /* Three20.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 145D1C2515E22A87007D5FBF /* Three20.bundle */; };
 		145D1C2715E22A87007D5FBF /* Three20.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 145D1C2515E22A87007D5FBF /* Three20.bundle */; };
+		145D1C2A15E236C4007D5FBF /* RestSearchResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D1C2915E236C4007D5FBF /* RestSearchResultController.m */; };
+		145D1C2B15E236C4007D5FBF /* RestSearchResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D1C2915E236C4007D5FBF /* RestSearchResultController.m */; };
+		145D1C2E15E23747007D5FBF /* RestSearchDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D1C2D15E23747007D5FBF /* RestSearchDataSource.m */; };
+		145D1C2F15E23747007D5FBF /* RestSearchDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D1C2D15E23747007D5FBF /* RestSearchDataSource.m */; };
+		145D1C3515E23815007D5FBF /* SearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D1C3415E23815007D5FBF /* SearchModel.m */; };
+		145D1C3615E23815007D5FBF /* SearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D1C3415E23815007D5FBF /* SearchModel.m */; };
+		145D1C3815E2423A007D5FBF /* LeftSidebarTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D1C3715E2423A007D5FBF /* LeftSidebarTableViewDelegate.m */; };
+		145D1C3915E2423A007D5FBF /* LeftSidebarTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 145D1C3715E2423A007D5FBF /* LeftSidebarTableViewDelegate.m */; };
 		146A0461155A4AD900F6F4B9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 146A0456155A4AD900F6F4B9 /* InfoPlist.strings */; };
 		146A0462155A4AD900F6F4B9 /* LogConfTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A0459155A4AD900F6F4B9 /* LogConfTests.m */; };
 		146A0463155A4AD900F6F4B9 /* NavigatorConfTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A045B155A4AD900F6F4B9 /* NavigatorConfTest.m */; };
@@ -62,12 +70,8 @@
 		146A0523155A4AE000F6F4B9 /* NotificationFlag.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A0496155A4AE000F6F4B9 /* NotificationFlag.m */; };
 		146A0524155A4AE000F6F4B9 /* RequestConf.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A0498155A4AE000F6F4B9 /* RequestConf.m */; };
 		146A0525155A4AE000F6F4B9 /* RequestConf.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A0498155A4AE000F6F4B9 /* RequestConf.m */; };
-		146A0528155A4AE000F6F4B9 /* PPFriendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A049D155A4AE000F6F4B9 /* PPFriendController.m */; };
-		146A0529155A4AE000F6F4B9 /* PPFriendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A049D155A4AE000F6F4B9 /* PPFriendController.m */; };
 		146A052A155A4AE000F6F4B9 /* PPLeftSidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A049F155A4AE000F6F4B9 /* PPLeftSidebarViewController.m */; };
 		146A052B155A4AE000F6F4B9 /* PPLeftSidebarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A049F155A4AE000F6F4B9 /* PPLeftSidebarViewController.m */; };
-		146A052C155A4AE000F6F4B9 /* PPPartyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A04A1155A4AE000F6F4B9 /* PPPartyController.m */; };
-		146A052D155A4AE000F6F4B9 /* PPPartyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A04A1155A4AE000F6F4B9 /* PPPartyController.m */; };
 		146A052E155A4AE000F6F4B9 /* RecommendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A04A3155A4AE000F6F4B9 /* RecommendController.m */; };
 		146A052F155A4AE000F6F4B9 /* RecommendController.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A04A3155A4AE000F6F4B9 /* RecommendController.m */; };
 		146A0536155A4AE000F6F4B9 /* DiscoveryDefaultCSSStyleSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A04AD155A4AE000F6F4B9 /* DiscoveryDefaultCSSStyleSheet.m */; };
@@ -82,8 +86,6 @@
 		146A0547155A4AE000F6F4B9 /* DSTableViewCustomHeaderDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A04BC155A4AE000F6F4B9 /* DSTableViewCustomHeaderDelegate.m */; };
 		146A0548155A4AE000F6F4B9 /* DSTableViewCustomMarginDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A04BE155A4AE000F6F4B9 /* DSTableViewCustomMarginDelegate.m */; };
 		146A0549155A4AE000F6F4B9 /* DSTableViewCustomMarginDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A04BE155A4AE000F6F4B9 /* DSTableViewCustomMarginDelegate.m */; };
-		146A054A155A4AE000F6F4B9 /* PPLeftSidebarTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A04C0155A4AE000F6F4B9 /* PPLeftSidebarTableViewDelegate.m */; };
-		146A054B155A4AE000F6F4B9 /* PPLeftSidebarTableViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A04C0155A4AE000F6F4B9 /* PPLeftSidebarTableViewDelegate.m */; };
 		146A054C155A4AE000F6F4B9 /* PPSidebarDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A04C2155A4AE000F6F4B9 /* PPSidebarDelegate.m */; };
 		146A054D155A4AE000F6F4B9 /* PPSidebarDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A04C2155A4AE000F6F4B9 /* PPSidebarDelegate.m */; };
 		146A0554155A4AE000F6F4B9 /* Logger.m in Sources */ = {isa = PBXBuildFile; fileRef = 146A04C9155A4AE000F6F4B9 /* Logger.m */; };
@@ -403,6 +405,13 @@
 		142E56E615E206AC00B5B340 /* silmaril.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = silmaril.proto; sourceTree = "<group>"; };
 		1436E755155A4E00004746C3 /* TemplateTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "TemplateTests-Info.plist"; sourceTree = "<group>"; };
 		145D1C2515E22A87007D5FBF /* Three20.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Three20.bundle; path = thirdparty/three20/src/Three20.bundle; sourceTree = SOURCE_ROOT; };
+		145D1C2815E236C4007D5FBF /* RestSearchResultController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestSearchResultController.h; sourceTree = "<group>"; };
+		145D1C2915E236C4007D5FBF /* RestSearchResultController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestSearchResultController.m; sourceTree = "<group>"; };
+		145D1C2C15E23747007D5FBF /* RestSearchDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestSearchDataSource.h; sourceTree = "<group>"; };
+		145D1C2D15E23747007D5FBF /* RestSearchDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestSearchDataSource.m; sourceTree = "<group>"; };
+		145D1C3315E23815007D5FBF /* SearchModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchModel.h; sourceTree = "<group>"; };
+		145D1C3415E23815007D5FBF /* SearchModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchModel.m; sourceTree = "<group>"; };
+		145D1C3715E2423A007D5FBF /* LeftSidebarTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftSidebarTableViewDelegate.m; sourceTree = "<group>"; };
 		146A0457155A4AD900F6F4B9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		146A0458155A4AD900F6F4B9 /* LogConfTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogConfTests.h; sourceTree = "<group>"; };
 		146A0459155A4AD900F6F4B9 /* LogConfTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogConfTests.m; sourceTree = "<group>"; };
@@ -447,12 +456,8 @@
 		146A0497155A4AE000F6F4B9 /* RequestConf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestConf.h; sourceTree = "<group>"; };
 		146A0498155A4AE000F6F4B9 /* RequestConf.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestConf.m; sourceTree = "<group>"; };
 		146A0499155A4AE000F6F4B9 /* UrlPageViewDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UrlPageViewDefinition.h; sourceTree = "<group>"; };
-		146A049C155A4AE000F6F4B9 /* PPFriendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPFriendController.h; sourceTree = "<group>"; };
-		146A049D155A4AE000F6F4B9 /* PPFriendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPFriendController.m; sourceTree = "<group>"; };
 		146A049E155A4AE000F6F4B9 /* PPLeftSidebarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPLeftSidebarViewController.h; sourceTree = "<group>"; };
 		146A049F155A4AE000F6F4B9 /* PPLeftSidebarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPLeftSidebarViewController.m; sourceTree = "<group>"; };
-		146A04A0155A4AE000F6F4B9 /* PPPartyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPPartyController.h; sourceTree = "<group>"; };
-		146A04A1155A4AE000F6F4B9 /* PPPartyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPPartyController.m; sourceTree = "<group>"; };
 		146A04A2155A4AE000F6F4B9 /* RecommendController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendController.h; sourceTree = "<group>"; };
 		146A04A3155A4AE000F6F4B9 /* RecommendController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendController.m; sourceTree = "<group>"; };
 		146A04A6155A4AE000F6F4B9 /* TTTableViewController+DSCatolog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TTTableViewController+DSCatolog.h"; sourceTree = "<group>"; };
@@ -471,8 +476,7 @@
 		146A04BC155A4AE000F6F4B9 /* DSTableViewCustomHeaderDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTableViewCustomHeaderDelegate.m; sourceTree = "<group>"; };
 		146A04BD155A4AE000F6F4B9 /* DSTableViewCustomMarginDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTableViewCustomMarginDelegate.h; sourceTree = "<group>"; };
 		146A04BE155A4AE000F6F4B9 /* DSTableViewCustomMarginDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTableViewCustomMarginDelegate.m; sourceTree = "<group>"; };
-		146A04BF155A4AE000F6F4B9 /* PPLeftSidebarTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPLeftSidebarTableViewDelegate.h; sourceTree = "<group>"; };
-		146A04C0155A4AE000F6F4B9 /* PPLeftSidebarTableViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPLeftSidebarTableViewDelegate.m; sourceTree = "<group>"; };
+		146A04BF155A4AE000F6F4B9 /* LeftSidebarTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftSidebarTableViewDelegate.h; sourceTree = "<group>"; };
 		146A04C1155A4AE000F6F4B9 /* PPSidebarDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPSidebarDelegate.h; sourceTree = "<group>"; };
 		146A04C2155A4AE000F6F4B9 /* PPSidebarDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPSidebarDelegate.m; sourceTree = "<group>"; };
 		146A04C8155A4AE000F6F4B9 /* Logger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Logger.h; sourceTree = "<group>"; };
@@ -755,20 +759,18 @@
 		146A049A155A4AE000F6F4B9 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				146A049C155A4AE000F6F4B9 /* PPFriendController.h */,
-				146A049D155A4AE000F6F4B9 /* PPFriendController.m */,
 				146A049E155A4AE000F6F4B9 /* PPLeftSidebarViewController.h */,
 				146A049F155A4AE000F6F4B9 /* PPLeftSidebarViewController.m */,
-				146A04A0155A4AE000F6F4B9 /* PPPartyController.h */,
-				146A04A1155A4AE000F6F4B9 /* PPPartyController.m */,
 				146A04A2155A4AE000F6F4B9 /* RecommendController.h */,
 				146A04A3155A4AE000F6F4B9 /* RecommendController.m */,
+				14804D8415E21F1C00F33814 /* RestController.h */,
+				14804D8515E21F1C00F33814 /* RestController.m */,
+				145D1C2815E236C4007D5FBF /* RestSearchResultController.h */,
+				145D1C2915E236C4007D5FBF /* RestSearchResultController.m */,
 				146A04A6155A4AE000F6F4B9 /* TTTableViewController+DSCatolog.h */,
 				146A04A7155A4AE000F6F4B9 /* TTTableViewController+DSCatolog.m */,
 				146A04A8155A4AE000F6F4B9 /* TTViewControllerDSCatolog.h */,
 				146A04A9155A4AE000F6F4B9 /* TTViewControllerDSCatolog.m */,
-				14804D8415E21F1C00F33814 /* RestController.h */,
-				14804D8515E21F1C00F33814 /* RestController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -804,6 +806,8 @@
 		146A04B5155A4AE000F6F4B9 /* datasource */ = {
 			isa = PBXGroup;
 			children = (
+				145D1C2C15E23747007D5FBF /* RestSearchDataSource.h */,
+				145D1C2D15E23747007D5FBF /* RestSearchDataSource.m */,
 				14804D7215E20DB400F33814 /* RecommendDataSource.h */,
 				14804D7315E20DB400F33814 /* RecommendDataSource.m */,
 				14804D8815E21F4B00F33814 /* RestDataSource.h */,
@@ -815,14 +819,14 @@
 		146A04B7155A4AE000F6F4B9 /* delegate */ = {
 			isa = PBXGroup;
 			children = (
+				145D1C3715E2423A007D5FBF /* LeftSidebarTableViewDelegate.m */,
 				146A04B8155A4AE000F6F4B9 /* AppDelegate.h */,
 				146A04B9155A4AE000F6F4B9 /* AppDelegate.m */,
 				146A04BB155A4AE000F6F4B9 /* DSTableViewCustomHeaderDelegate.h */,
 				146A04BC155A4AE000F6F4B9 /* DSTableViewCustomHeaderDelegate.m */,
 				146A04BD155A4AE000F6F4B9 /* DSTableViewCustomMarginDelegate.h */,
 				146A04BE155A4AE000F6F4B9 /* DSTableViewCustomMarginDelegate.m */,
-				146A04BF155A4AE000F6F4B9 /* PPLeftSidebarTableViewDelegate.h */,
-				146A04C0155A4AE000F6F4B9 /* PPLeftSidebarTableViewDelegate.m */,
+				146A04BF155A4AE000F6F4B9 /* LeftSidebarTableViewDelegate.h */,
 				146A04C1155A4AE000F6F4B9 /* PPSidebarDelegate.h */,
 				146A04C2155A4AE000F6F4B9 /* PPSidebarDelegate.m */,
 			);
@@ -853,6 +857,8 @@
 		146A04CC155A4AE000F6F4B9 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				145D1C3315E23815007D5FBF /* SearchModel.h */,
+				145D1C3415E23815007D5FBF /* SearchModel.m */,
 				14804D7615E20E0700F33814 /* RecommendModel.h */,
 				14804D7715E20E0700F33814 /* RecommendModel.m */,
 			);
@@ -1438,9 +1444,7 @@
 				146A0520155A4AE000F6F4B9 /* NavigatorConf.m in Sources */,
 				146A0522155A4AE000F6F4B9 /* NotificationFlag.m in Sources */,
 				146A0524155A4AE000F6F4B9 /* RequestConf.m in Sources */,
-				146A0528155A4AE000F6F4B9 /* PPFriendController.m in Sources */,
 				146A052A155A4AE000F6F4B9 /* PPLeftSidebarViewController.m in Sources */,
-				146A052C155A4AE000F6F4B9 /* PPPartyController.m in Sources */,
 				146A052E155A4AE000F6F4B9 /* RecommendController.m in Sources */,
 				146A0536155A4AE000F6F4B9 /* DiscoveryDefaultCSSStyleSheet.m in Sources */,
 				146A0538155A4AE000F6F4B9 /* DefaultCSSStyleSheet.m in Sources */,
@@ -1448,7 +1452,6 @@
 				146A0542155A4AE000F6F4B9 /* AppDelegate.m in Sources */,
 				146A0546155A4AE000F6F4B9 /* DSTableViewCustomHeaderDelegate.m in Sources */,
 				146A0548155A4AE000F6F4B9 /* DSTableViewCustomMarginDelegate.m in Sources */,
-				146A054A155A4AE000F6F4B9 /* PPLeftSidebarTableViewDelegate.m in Sources */,
 				146A054C155A4AE000F6F4B9 /* PPSidebarDelegate.m in Sources */,
 				146A0554155A4AE000F6F4B9 /* Logger.m in Sources */,
 				146A0556155A4AE000F6F4B9 /* LogNavigatorDelegate.m in Sources */,
@@ -1481,6 +1484,10 @@
 				14804D7C15E20E4D00F33814 /* PBArrayConverter.m in Sources */,
 				14804D8615E21F1C00F33814 /* RestController.m in Sources */,
 				14804D8A15E21F4B00F33814 /* RestDataSource.m in Sources */,
+				145D1C2A15E236C4007D5FBF /* RestSearchResultController.m in Sources */,
+				145D1C2E15E23747007D5FBF /* RestSearchDataSource.m in Sources */,
+				145D1C3515E23815007D5FBF /* SearchModel.m in Sources */,
+				145D1C3815E2423A007D5FBF /* LeftSidebarTableViewDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1507,9 +1514,7 @@
 				146A0521155A4AE000F6F4B9 /* NavigatorConf.m in Sources */,
 				146A0523155A4AE000F6F4B9 /* NotificationFlag.m in Sources */,
 				146A0525155A4AE000F6F4B9 /* RequestConf.m in Sources */,
-				146A0529155A4AE000F6F4B9 /* PPFriendController.m in Sources */,
 				146A052B155A4AE000F6F4B9 /* PPLeftSidebarViewController.m in Sources */,
-				146A052D155A4AE000F6F4B9 /* PPPartyController.m in Sources */,
 				146A052F155A4AE000F6F4B9 /* RecommendController.m in Sources */,
 				146A0537155A4AE000F6F4B9 /* DiscoveryDefaultCSSStyleSheet.m in Sources */,
 				146A0539155A4AE000F6F4B9 /* DefaultCSSStyleSheet.m in Sources */,
@@ -1517,7 +1522,6 @@
 				146A0543155A4AE000F6F4B9 /* AppDelegate.m in Sources */,
 				146A0547155A4AE000F6F4B9 /* DSTableViewCustomHeaderDelegate.m in Sources */,
 				146A0549155A4AE000F6F4B9 /* DSTableViewCustomMarginDelegate.m in Sources */,
-				146A054B155A4AE000F6F4B9 /* PPLeftSidebarTableViewDelegate.m in Sources */,
 				146A054D155A4AE000F6F4B9 /* PPSidebarDelegate.m in Sources */,
 				146A0555155A4AE000F6F4B9 /* Logger.m in Sources */,
 				146A0557155A4AE000F6F4B9 /* LogNavigatorDelegate.m in Sources */,
@@ -1546,6 +1550,10 @@
 				14804D7D15E20E4D00F33814 /* PBArrayConverter.m in Sources */,
 				14804D8715E21F1C00F33814 /* RestController.m in Sources */,
 				14804D8B15E21F4B00F33814 /* RestDataSource.m in Sources */,
+				145D1C2B15E236C4007D5FBF /* RestSearchResultController.m in Sources */,
+				145D1C2F15E23747007D5FBF /* RestSearchDataSource.m in Sources */,
+				145D1C3615E23815007D5FBF /* SearchModel.m in Sources */,
+				145D1C3915E2423A007D5FBF /* LeftSidebarTableViewDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

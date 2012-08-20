@@ -12,8 +12,8 @@
 
 #import "RecommendController.h"
 #import "RestController.h"
-#import "PPPartyController.h"
-#import "PPFriendController.h"
+//#import "RestSearchResultController.h"
+
 ///////////////////////////////////
 
 @implementation NavigatorConf
@@ -32,11 +32,8 @@
     [map            from:IRI_Rest
         toViewController:[RestController class]];
     
-    [map            from:IRI_Parties
-        toViewController:[PPPartyController class]];
-    
-    [map            from:IRI_Friends
-        toSharedViewController:[PPFriendController class]];
+//    [map            from:IRI_Search
+//        toViewController:[RestSearchResultController class]];
 }
 
 

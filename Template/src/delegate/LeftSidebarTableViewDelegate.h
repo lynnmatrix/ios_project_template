@@ -7,6 +7,6 @@
 //
 
 
-@interface PPLeftSidebarTableViewDelegate : TTTableViewDelegate
+@interface LeftSidebarTableViewDelegate : TTTableViewDelegate
 
 @end
