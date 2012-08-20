@@ -14,4 +14,6 @@
 - (void) prepareRequests;
 - (void) prepareAppendRequest;
 
+- (PBArray*) getPBArrayFromMessage: (PBGeneratedMessage*) message;
+- (PBGeneratedMessage*) getMessageFromPBArray:(PBArray*) array;
 @end

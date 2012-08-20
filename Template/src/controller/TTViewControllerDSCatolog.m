@@ -57,14 +57,14 @@ extern int NavigationBackgroundTag;
         [self.navigationController addSubcontroller:controller animated:animated
                                          transition:transition];
     }
-    [self configLeftBarButton:controller];
+//    [self configLeftBarButton:controller];
 }
 
 - (void) viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     [TTURLRequestQueue mainQueue].suspended = NO;
-    [self resetPositionOfBackgoundView];
+//    [self resetPositionOfBackgoundView];
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -73,6 +73,7 @@ extern int NavigationBackgroundTag;
     [TBLoadingView showLoadingView:NO];
 }
 
+/**
 - (void) setTitle:(NSString *)title
 {
     [super setTitle:title];
@@ -90,6 +91,7 @@ extern int NavigationBackgroundTag;
     titleView.text = title;
     [titleView sizeToFit];
 }
+ **/
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)removeFromSupercontrollerAnimated:(BOOL)animated {

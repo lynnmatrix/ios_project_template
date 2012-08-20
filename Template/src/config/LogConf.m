@@ -14,7 +14,7 @@
 
 + (void) prepareLogSource:(LogSource*) logSource{
     
-    [logSource mapURL:URL_Square toPageView:PageView_Square];
+    [logSource mapURL:IRI_Recommend toPageView:PageView_Recommend];
 }
 
 #pragma mark -

@@ -58,7 +58,7 @@ static int lastDelay = 0;
         case FormatJSON:
             response = [[TTURLJSONResponse alloc] init];
             break;
-            case FormatProtocolBuffer:
+        case FormatProtocolBuffer:
             response = [[TTURLDataResponse alloc] init];
         default:
             break;
@@ -119,7 +119,7 @@ static int lastDelay = 0;
     [_request setUrlPath:url];
     [_request send];
 
-    [[Logger defaultLogger] sendLog];
+//    [[Logger defaultLogger] sendLog];
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -174,18 +174,18 @@ static int lastDelay = 0;
     }
 
     TTURLDataResponse* response = request.response;
-    TTDASSERT([response.data isKindOfClass:[NSData class]]);
-    
-    if (response.data == nil)
-    {
-        TTDERROR(@"response.data is nil");
-        @throw [NSException exceptionWithName:nil reason:nil userInfo:nil];
-    }
+
     if (1==_page) {
         [self clearModel];
     }
     switch (self.responseFormat) {
         case FormatProtocolBuffer:{
+            TTDASSERT([response.data isKindOfClass:[NSData class]]);
+            if (response.data == nil)
+            {
+                TTDERROR(@"response.data is nil");
+                @throw [NSException exceptionWithName:nil reason:nil userInfo:nil];
+            }
             PBCodedInputStream * input = [PBCodedInputStream streamWithData:response.data];
             [self parseResponse:input];
             break;
@@ -336,7 +336,10 @@ static int lastDelay = 0;
 
 - (NSString *) getSuffix
 {
-    NSString* lastDelayStr = [NSString stringWithFormat:@"&lastDelay=%d",lastDelay];
+    NSString* lastDelayStr = [NSString stringWithFormat:@"&lastDelay=%d&rpwtrpjj=7387099675450540651",lastDelay];
+    if (self.responseFormat==FormatJSON) {
+        lastDelayStr = [lastDelayStr stringByAppendingString:@"&t=json"];
+    }
     NSString* suffix = [[Utility getSuffixOfUrl] stringByAppendingString:lastDelayStr];
     return suffix;
 }

@@ -13,6 +13,6 @@
     #import <Foundation/Foundation.h>
 	#import <Three20/Three20+Additions.h>
     #import <Three20/Three20.h>
-    #import "ProtocolBuffers.h"
+    #import <ProtocolBuffers.h>
     #import "Silmaril.pb.h"
 #endif

@@ -72,12 +72,13 @@
 
     NSMutableDictionary* result = [[[NSMutableDictionary alloc] init] autorelease];
     
-    for (Request* request in _requestArray) {
-   
+    for (int index =0;index<self.requestArray.count;++index) {
+        Request* request = [self.requestArray objectAtIndex:index];
         NSMutableDictionary* status = [[NSMutableDictionary alloc] initWithCapacity:2];
         
         NSString* requestName = [[RequestDataSource globalRequestDataSource] getName:request.type];
-        NSArray* singleResponse = [response.rootObject objectForKey:requestName];
+
+        NSArray* singleResponse = [response.rootObject objectAtIndex:index];
         
         if (nil == singleResponse) {
             NSString* reason = [NSString stringWithFormat:@"No matched response for %@",requestName];

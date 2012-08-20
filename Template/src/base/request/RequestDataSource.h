@@ -33,12 +33,15 @@
 @interface  RequestDataSource: NSObject<RequestDataSource>{
     NSMutableDictionary* _apiNameDict;
     NSMutableDictionary* _apiParamsDict;
+    NSMutableDictionary* _apiReturnClassDict;
 }
 @property (nonatomic, copy) NSString* server;
 
 + (RequestDataSource*) globalRequestDataSource;
 - (void) mapApi:(int) api toName:(NSString*)methodName;
 - (void) mapApi:(int)api toParams:(NSString*) params;
+- (void) mapApi:(int)api toReturnClass:(Class) returnClass;
 - (void) removeNameOfApi:(int) api;
 - (void) removeParamsOfApi:(int) api;
+- (void) removeReturnClassOfApi:(int) api;
 @end

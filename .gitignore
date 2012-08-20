@@ -17,3 +17,5 @@ profile
 *.orig
 .DS_Store
 *.pyc
+
+thirdparty/protobuf-objc

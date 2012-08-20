@@ -13,6 +13,7 @@
 #import "RequestConf.h"
 
 #import "User.h"
+#import "MOLocator.h"
 
 //CSS
 #import "DefaultCSSStyleSheet.h"
@@ -41,35 +42,6 @@ const int NavigationBackgroundTag = 15769457;
 
 @synthesize navigatorDelegate = _navigatorDelegate;
 
-//#pragma -
-//#pragma  load viewcontroller
-///**
-// * Loads the given viewcontroller from the nib
-// */
-//- (UIViewController*)loadFromNib:(NSString *)nibName withClass:className {
-//    UIViewController* newController = [[NSClassFromString(className) alloc]
-//                                       initWithNibName:nibName bundle:nil];
-//    
-//    return newController;
-//}
-//
-///**
-// * Loads the given viewcontroller from the the nib with the same name as the
-// * class
-// */
-//- (UIViewController*)loadFromNib:(NSString*)className {
-//    return [self loadFromNib:className withClass:className];
-//}
-//
-///**
-// * Loads the given viewcontroller by name
-// */
-//- (UIViewController *)loadFromVC:(NSString *)className {
-//    UIViewController * newController = [[ NSClassFromString(className) alloc] init];
-//    
-//    return newController;
-//}
-//
 - (void)configNavigationBarStyle
 {
     UIImage *image = (UIImage*) TTSTYLEVAR(navigationBarImage);
@@ -222,8 +194,9 @@ const int NavigationBackgroundTag = 15769457;
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     
-    [application setStatusBarStyle : UIStatusBarStyleBlackTranslucent];
+    [[MOLocator sharedMOLocator] startLocating];
     
+    [application setStatusBarStyle : UIStatusBarStyleBlackTranslucent];
     /**
     	Should be called before configNavigationBarStyle,since it will be used in the later one
      */
@@ -241,12 +214,12 @@ const int NavigationBackgroundTag = 15769457;
             [[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:rootURLPath]];
         }
     }else{
-        [[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:@"iri://square"]];
+        [[TTNavigator navigator] openURLAction:[TTURLAction actionWithURLPath:@"iri://recommend"]];
     }
     /**
     	Should be called after open view controller in navigator
      */
-    [self configNavigationBarStyle];
+//    [self configNavigationBarStyle];
     
     [NSTimer scheduledTimerWithTimeInterval:5
                             target:self

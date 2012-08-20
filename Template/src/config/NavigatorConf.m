@@ -10,7 +10,8 @@
 #import "UrlPageViewDefinition.h"
 #import "Config.h"
 
-#import "PPSquareViewController.h"
+#import "RecommendController.h"
+#import "RestController.h"
 #import "PPPartyController.h"
 #import "PPFriendController.h"
 ///////////////////////////////////
@@ -25,16 +26,22 @@
     [map            from:@"*" 
         toViewController:[TTWebController class]];
     
-    [map            from:URL_Square
-  toSharedViewController:[PPSquareViewController class]];
+    [map            from:IRI_Recommend
+  toSharedViewController:[RecommendController class]];
     
-    [map            from:URL_Parties 
+    [map            from:IRI_Rest
+        toViewController:[RestController class]];
+    
+    [map            from:IRI_Parties
         toViewController:[PPPartyController class]];
     
-    [map            from:URL_Friends
+    [map            from:IRI_Friends
         toSharedViewController:[PPFriendController class]];
 }
 
+
+
+////////////////////////////////////////////////////////////////////////////////
 // navigator map without parameter
 + (void)prepareGeneralMap:(TTURLMap *)map 
 {

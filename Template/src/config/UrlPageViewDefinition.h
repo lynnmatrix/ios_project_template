@@ -6,8 +6,10 @@
 //  Copyright (c) 2012年 . All rights reserved.
 //
 
-#define URL_Square              @"iri://square"
-#define PageView_Square         @"pageview_square"
+#define IRI_Recommend              @"iri://recommend"
+#define PageView_Recommend         @"pageview_recommend"
 
-#define URL_Friends             @"iri://friends"
-#define URL_Parties             @"iri://parties"
+#define IRI_Rest                    @"iri://rest?id=(initWithRid:)"
+
+#define IRI_Friends             @"iri://friends"
+#define IRI_Parties             @"iri://parties"

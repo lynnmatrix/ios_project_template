@@ -14,7 +14,12 @@ typedef enum API_Method{
 	API_NONE, /**< unknow api */
     API_LOG, /**< log*/
     API_CHECKUPDATE, /**< checkupdate*/
-    API_OPENAPP
+    API_OPENAPP,
+    
+    API_NEWUSER,
+    API_RECOMMEND,
+    API_RESTINFO,
+    API_SEARCH
 }API_Method;
 
 

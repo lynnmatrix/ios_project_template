@@ -4,8 +4,8 @@
 const NSString* rootURLPath = @"iri://root";
 const NSString* urlPrefix = @"iri://";
 
-const NSString* server = @"http://*.com/";
-const NSString* cookieDomain = @"*.com";
+const NSString* server = @"http://fanfan.elibom.youdao.com/";
+const NSString* cookieDomain = @"fanfan.elibom.youdao.com";
 
 const NSString* vendor = @"appstore";
 

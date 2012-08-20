@@ -6,6 +6,6 @@
 //  Copyright (c) 2012年 . All rights reserved.
 //
 
-@interface PPSquareViewController : TTModelViewController
+@interface RecommendController : TTTableViewController
 
 @end

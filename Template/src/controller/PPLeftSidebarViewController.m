@@ -18,8 +18,8 @@
 
 - (void)createModel{
     self.dataSource = [TTListDataSource dataSourceWithObjects:
-                       [TTTableTextItem itemWithText:NSLocalizedString(@"menu1", nil) URL:URL_Square],
-                       [TTTableTextItem itemWithText:NSLocalizedString(@"menu2", nil) URL:URL_Friends],nil];
+                       [TTTableTextItem itemWithText:NSLocalizedString(@"推荐", nil) URL:IRI_Recommend],
+                       [TTTableTextItem itemWithText:NSLocalizedString(@"menu2", nil) URL:IRI_Friends],nil];
 }
 
 - (id<UITableViewDelegate>)createDelegate {

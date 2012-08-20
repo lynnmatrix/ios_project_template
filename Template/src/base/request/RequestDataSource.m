@@ -26,6 +26,7 @@ static RequestDataSource* gRequestDataSource = nil;
     if (self=[super init]) {
         _apiNameDict = [[NSMutableDictionary alloc] init];
         _apiParamsDict = [[NSMutableDictionary alloc] init];
+        _apiReturnClassDict = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -51,12 +52,21 @@ static RequestDataSource* gRequestDataSource = nil;
     [_apiParamsDict setObject:params forKey:[self keyForApi:api]];
 }
 
+- (void) mapApi:(int)api toReturnClass:(Class) returnClass{
+    
+    [_apiReturnClassDict setObject:returnClass   forKey:[self keyForApi:api]];
+}
+
 - (void) removeNameOfApi:(int) api{
     [_apiNameDict removeObjectForKey:[self keyForApi:api]];
 }
 
 - (void) removeParamsOfApi:(int) api{
     [_apiParamsDict removeObjectForKey:[self keyForApi:api]];
+}
+
+- (void) removeReturnClassOfApi:(int)api{
+    [_apiReturnClassDict removeObjectForKey:[self keyForApi:api]];
 }
 
 #pragma mark -
@@ -69,4 +79,7 @@ static RequestDataSource* gRequestDataSource = nil;
     return [_apiParamsDict objectForKey:[self keyForApi:api]];
 }
 
+- (Class) getReturnClass:(int)api{
+    return [_apiReturnClassDict objectForKey:[self keyForApi:api]];
+}
 @end

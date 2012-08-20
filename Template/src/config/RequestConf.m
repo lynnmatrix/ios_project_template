@@ -23,6 +23,19 @@
     
     [requestSource mapApi:API_OPENAPP toName:@"openapp"];
     [requestSource mapApi:API_OPENAPP toParams:@"maid,md,phoneNumber"];
+    
+    [requestSource mapApi:API_NEWUSER toName:@"newuser"];
+    
+    [requestSource mapApi:API_RESTINFO toName:@"restinfo"];
+    [requestSource mapApi:API_RESTINFO toParams:@"id"];
+    
+    [requestSource mapApi:API_RECOMMEND toName:@"recommend"];
+    [requestSource mapApi:API_RECOMMEND toParams:@"notVisited,sort,city,dist,lo,la,minPay,maxPay,start,len,q,style,type,view"];
+    [requestSource mapApi:API_RECOMMEND toReturnClass:[MsgRestInfos class]];
+    
+    [requestSource mapApi:API_SEARCH toName:@"search"];
+    [requestSource mapApi:API_SEARCH toParams:@"q,start,len,lo,la,city"];
+    [requestSource mapApi:API_SEARCH toReturnClass:[MsgRestInfos class]];
 }
 
 @end

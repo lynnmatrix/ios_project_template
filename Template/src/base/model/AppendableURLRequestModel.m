@@ -11,6 +11,7 @@
 
 #import "User.h"
 #import "TBGlobalErrorView.h"
+#import "RequestDataSource.h"
 
 
 @interface AppendableURLRequestModel () 
@@ -45,6 +46,7 @@
     url = [NSString stringWithFormat:@"%@%@",url,[self getSuffix]];
     return url;
 }
+
 - (void) parseJSONResponse:(TTURLJSONResponse*) response{
     @try {
         NSMutableDictionary* status = 
@@ -92,6 +94,50 @@
     }
 }
 
+
+- (void)parseResponse:(PBCodedInputStream *)input 
+{
+    @try {
+        NSDictionary * response = [self.requestBatch parseResponse:input];
+        
+        NSString *appendableKey=[NSString stringWithFormat:@"%d",self.methodWithMore];
+        Class pbClass=[[RequestDataSource globalRequestDataSource] getReturnClass:self.methodWithMore];
+        
+        [self removeLastDataIfNeed];
+        
+        PBGeneratedMessage* dataAppenable = [self.responseDict objectForKey:appendableKey];
+        PBGeneratedMessage* dataReturn = [response objectForKey:appendableKey];
+        
+        //warning ,since it's not abstract method 
+        PBGeneratedMessage* dataMerged=[[[pbClass builderWithPrototype:dataAppenable]
+                                         mergeFrom:dataReturn]
+                                        build];
+        [response setValue:dataMerged
+                    forKey:appendableKey];
+        
+        [self.responseDict addEntriesFromDictionary:response];
+        
+        self.hasNoMore = YES;
+        if ([self hasMoreToLoadProto:dataReturn]) {
+            self.hasNoMore =NO;
+        }
+        
+    }
+    @catch (NSException *exception) {
+        TTDINFO(@"throw exception");
+        MsgApiStatus* status = [exception.userInfo objectForKey:@"status"];
+        if (nil!=status) {
+            TTDERROR(@"exception:%i,%@",status.code,status.message);
+            [self.responseDict setValue:status
+                                 forKey:@"status"];
+        }
+        
+        if (_willShowFailure) {
+            [TBGlobalErrorView showRequestFailureView];
+        }
+    }
+}
+
 #pragma -
 #pragma private methods
 
@@ -107,6 +153,36 @@
     return NO;
 }
 
+#pragma -
+#pragma private methods
+
+- (BOOL) hasMoreToLoadProto: (PBGeneratedMessage*)response
+{
+    int count = [[self getPBArrayFromMessage:response] count];
+    
+    return  (count > self.resultsPerPage)?YES:NO;
+}
+
+- (void) removeLastDataIfNeed{
+    
+    if (self.page >1) {
+        //其它页删除第一个返回元素
+        NSString *appendableKey=[NSString stringWithFormat:@"%d",self.methodWithMore];
+        PBGeneratedMessage* dataAppendable = [self.responseDict objectForKey:appendableKey];
+        PBArray* pbArray = [self getPBArrayFromMessage:dataAppendable];
+        
+        PBAppendableArray* pbArrayToAppend = [PBAppendableArray arrayWithValueType:PBArrayValueTypeObject];
+        
+        int count = pbArray.count;
+        for (int i =0; i< count-1; ++i) {
+            [pbArrayToAppend addObject:[pbArray objectAtIndex:i]];
+        }
+        
+        PBGeneratedMessage* result = [self getMessageFromPBArray:pbArrayToAppend];
+        [self.responseDict setObject:result forKey:appendableKey];
+    }
+}
+
 
 #pragma -
 #pragma Must be overrided by subclass
@@ -114,4 +190,14 @@
 {}
 - (void) prepareAppendRequest
 {}
+
+- (PBArray*) getPBArrayFromMessage: (PBGeneratedMessage*) message
+{
+    return nil;
+}
+
+- (PBGeneratedMessage*) getMessageFromPBArray:(PBArray*) array
+{
+    return nil;
+}
 @end
